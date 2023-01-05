@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import type { IAuthSlice } from "@/interfaces/store/slices/authSlice";
+import { IAuthSlice } from "@/interfaces/store/slices/authSlice";
 
 const initialState: IAuthSlice = {
 	isLogged: false,

@@ -1,7 +1,3 @@
-import { ReactElement, JSXElementConstructor } from "react";
+import { IRoute } from "@interfaces/globals/route";
 
-export interface IPublicRoute {
-	component: (
-		props: any
-	) => ReactElement<any, string | JSXElementConstructor<any>> | null;
-}
+export interface IPublicRoute extends IRoute {}

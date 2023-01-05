@@ -1,4 +1,4 @@
-import type { IMainLayout } from "@interfaces/components/auth/MainLayout";
+import { IMainLayout } from "@interfaces/components/auth/MainLayout";
 
 export interface IAuth {
 	MainLayout: (props: IMainLayout) => JSX.Element;

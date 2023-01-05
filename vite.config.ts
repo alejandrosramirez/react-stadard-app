@@ -14,6 +14,7 @@ export default defineConfig({
 			"@api": resolvePath("src/api"),
 			"@assets": resolvePath("src/assets"),
 			"@components": resolvePath("src/components"),
+			"@constants": resolvePath("src/constants"),
 			"@core": resolvePath("src/core"),
 			"@helpers": resolvePath("src/helpers"),
 			"@interfaces": resolvePath("src/interfaces"),

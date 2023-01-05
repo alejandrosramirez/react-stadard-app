@@ -2,7 +2,7 @@ import { Controller, useFormContext } from "react-hook-form";
 import { Textarea } from "@mantine/core";
 import { useFocusWithin } from "@mantine/hooks";
 
-import type { IRHFTextarea } from "@interfaces/core/components/HookForm/RHFTextarea";
+import { IRHFTextarea } from "@interfaces/core/components/HookForm/RHFTextarea";
 
 const RHFTextarea = ({
 	label,
@@ -20,11 +20,12 @@ const RHFTextarea = ({
 			render={({ field, fieldState: { error } }) => (
 				<Textarea
 					{...field}
+					{...rest}
+					id={name}
 					ref={ref}
 					label={error?.message ? error.message : label}
 					error={!!error}
 					autosize={autosize}
-					{...rest}
 				/>
 			)}
 		/>

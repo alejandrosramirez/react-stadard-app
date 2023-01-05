@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery, retry } from "@reduxjs/toolkit/query/react";
 import { FetchArgs } from "@reduxjs/toolkit/dist/query";
 import { BaseQueryApi } from "@reduxjs/toolkit/dist/query/baseQueryTypes";
 
-import type { IAuthSlice } from "@interfaces/store/slices/authSlice";
+import { IAuthSlice } from "@interfaces/store/slices/authSlice";
 import { removeUser } from "@store/slices/authSlice";
 
 const baseQuery = fetchBaseQuery({

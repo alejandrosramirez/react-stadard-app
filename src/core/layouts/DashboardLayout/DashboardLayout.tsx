@@ -1,15 +1,11 @@
 import { Outlet } from "react-router-dom";
-import {
-	AppShell as MantineAppShell,
-	Container,
-	useMantineTheme,
-} from "@mantine/core";
+import { AppShell, useMantineTheme } from "@mantine/core";
 
 const DashboardLayout = () => {
 	const theme = useMantineTheme();
 
 	return (
-		<MantineAppShell
+		<AppShell
 			padding={0}
 			asideOffsetBreakpoint="sm"
 			navbarOffsetBreakpoint="sm"
@@ -29,7 +25,7 @@ const DashboardLayout = () => {
 			}}
 		>
 			<Outlet />
-		</MantineAppShell>
+		</AppShell>
 	);
 };
 

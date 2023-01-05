@@ -1,4 +1,4 @@
-import { IBuildFormDataConfig } from "@/interfaces/utils/buildFormData";
+import { IBuildFormDataConfig } from "@interfaces/helpers/buildFormData";
 
 const isUndefined = (value: any) => value === undefined;
 

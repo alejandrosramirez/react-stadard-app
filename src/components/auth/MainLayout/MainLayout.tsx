@@ -1,6 +1,6 @@
 import { Card, Center, Container, Image, Stack } from '@mantine/core';
 
-import type { IMainLayout } from "@interfaces/components/auth/MainLayout";
+import { IMainLayout } from "@interfaces/components/auth/MainLayout";
 
 import reactLogo from "@assets/react.svg";
 

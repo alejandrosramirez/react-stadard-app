@@ -22,11 +22,11 @@
 			"@assets/*": ["./src/assets/*"],
 			"@components/*": ["./src/components/*"],
 			"@core/*": ["./src/core/*"],
+			"@helpers": ["./src/helpers"],
 			"@interfaces/*": ["./src/interfaces/*"],
 			"@pages/*": ["./src/pages/*"],
 			"@routes/*": ["./src/routes/*"],
 			"@store/*": ["./src/store/*"],
-			"@helpers": ["./src/helpers"]
 		}
 	},
 	"include": ["src"],

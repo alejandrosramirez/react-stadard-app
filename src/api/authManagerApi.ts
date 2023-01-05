@@ -1,6 +1,7 @@
 import { api } from "@api/manager";
 import { buildFormData } from "@helpers";
-import type { ILogin, ILoginParams } from "@interfaces/api/authManagerApi";
+
+import { ILogin, ILoginParams } from "@interfaces/api/authManagerApi";
 
 const name = "auth";
 
