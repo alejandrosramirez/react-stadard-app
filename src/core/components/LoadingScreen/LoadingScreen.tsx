@@ -1,6 +1,8 @@
 import { useLocation } from "react-router-dom";
+import { PuffLoader } from "react-spinners";
+import { Group } from "@mantine/core";
 
-import { Group, Loader } from "@mantine/core";
+import logo from "@assets/logo.svg";
 
 import styles from "./styles";
 
@@ -15,14 +17,10 @@ const LoadingScreen = () => {
 	return (
 		<Group position="center" className={getClassNameOfLayoutType()}>
 			<div className={classes.spinnerContainer}>
-				<Loader color="gray" size={90} />
+				<PuffLoader color="rgb(36 58 142 / 63%)" size={150} />
 			</div>
 
-			<img
-				src="https://seeklogo.com/images/M/mantine-logo-235E19C978-seeklogo.com.png"
-				alt="logo"
-				width={85}
-			/>
+			<img src={logo} alt="logo" width={85} />
 		</Group>
 	);
 };

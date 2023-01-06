@@ -5,7 +5,7 @@ import {
 } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
 
-import { ICustomMantineProvider } from "@/interfaces/core/providers/CustomMantineProvider";
+import { ICustomMantineProvider } from "@interfaces/core/providers/CustomMantineProvider";
 
 const CustomMantineProvider = ({ children, theme }: ICustomMantineProvider) => {
 	const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({

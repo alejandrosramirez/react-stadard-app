@@ -5,8 +5,8 @@ const AuthLayout = () => {
 	const theme = useMantineTheme();
 
 	return (
-		<Container
-			styles={{
+		<div
+			style={{
 				background:
 					theme.colorScheme === "dark"
 						? theme.colors.dark[8]
@@ -14,7 +14,7 @@ const AuthLayout = () => {
 			}}
 		>
 			<Outlet />
-		</Container>
+		</div>
 	);
 };
 

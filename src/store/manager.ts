@@ -14,7 +14,7 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 import storage from "localforage";
 
 import { api } from "@api/manager";
-import * as slices from "@store/slices";
+import * as slices from "./slices";
 
 const reducers = combineReducers({
 	...Object.entries(slices).reduce(

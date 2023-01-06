@@ -2,15 +2,21 @@ import { shallowEqual, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
 import { IPublicRoute } from "@interfaces/core/components/PublicRoute";
-import { IAuthSlice } from "@interfaces/store/slices/authSlice";
+import { ISlice } from "@interfaces/store/slices";
 
 const PublicRoute = ({ component: Component }: IPublicRoute) => {
 	const { isLogged } = useSelector(
-		(state: IAuthSlice) => state,
+		(state: ISlice) => state.authSlice,
 		shallowEqual
 	);
 
-	return isLogged ? <Navigate to={"/dashboard"} replace /> : <Component />;
+	console.log(isLogged);
+
+	return isLogged ? (
+		<Navigate to={"dashboard"} replace={true} />
+	) : (
+		<Component />
+	);
 };
 
 export default PublicRoute;

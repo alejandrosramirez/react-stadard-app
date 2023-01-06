@@ -2,6 +2,16 @@ import { createStyles } from "@mantine/core";
 
 const styles = createStyles(() => {
 	return {
+		dashboard: {
+			width: "100%",
+			height: "100vh",
+			position: "relative",
+		},
+		auth: {
+			width: "100%",
+			height: "100vh",
+			position: "relative",
+		},
 		spinnerContainer: {
 			display: "flex",
 			alignItems: "center",
@@ -11,16 +21,6 @@ const styles = createStyles(() => {
 			left: 0,
 			right: 0,
 			bottom: 0,
-		},
-		auth: {
-			width: "100vw",
-			height: "100vh",
-			position: "relative",
-		},
-		dashboard: {
-			width: "100%",
-			height: "100%",
-			position: "relative",
 		},
 	};
 });

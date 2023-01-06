@@ -1,17 +1,19 @@
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Grid } from "@mantine/core";
+import { Button, Grid } from "@mantine/core";
 import { IconLock as Lock, IconMail as Mail } from "@tabler/icons";
 
 import { authManagerApi } from "@api/authManagerApi";
 import { FormProvider, RHFPasswordInput, RHFTextInput } from "@core/components/HookForm";
-import { useHandleFormError } from "@core/hooks";
+import { useHandleFormError, useLogin } from "@core/hooks";
 import { ILoginParams } from "@interfaces/api/authManagerApi";
 
 const { useLoginMutation } = authManagerApi;
 
 const LoginForm = () => {
+	const { handleLogin } = useLogin();
+
 	const [submitForm] = useLoginMutation();
 	const { handleFormError } = useHandleFormError();
 
@@ -35,11 +37,14 @@ const LoginForm = () => {
 	const { handleSubmit: submitRHF } = formMethods;
 
 	const handleSubmit = async (data: ILoginParams) => {
-		const resp = await submitForm(data).unwrap();
-		console.log(resp);
+		const user = await submitForm(data).unwrap();
+
+		handleLogin(user);
 	};
 
-	const onSubmit = (data: ILoginParams) => handleFormError(() => handleSubmit(data))
+	const { formState: { isSubmitting }, setError } = formMethods;
+
+	const onSubmit = (data: ILoginParams) => handleFormError(() => handleSubmit(data), setError);
 
 	return (
 		<FormProvider methods={formMethods} onSubmit={submitRHF(onSubmit)}>
@@ -60,6 +65,16 @@ const LoginForm = () => {
 						placeholder="•••••••••••••••"
 						icon={<Lock size={14} />}
 					/>
+				</Grid.Col>
+
+				<Grid.Col span={12}>
+					<Button
+						type="submit"
+						loading={isSubmitting}
+						fullWidth
+					>
+						Iniciar Sesión
+					</Button>
 				</Grid.Col>
 			</Grid>
 		</FormProvider>

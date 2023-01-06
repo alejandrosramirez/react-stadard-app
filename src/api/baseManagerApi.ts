@@ -1,15 +1,14 @@
 import { isEmpty } from "lodash";
 import { stringify } from "qs";
 
-import { api } from "@api/manager";
 import { buildFormData } from "@helpers";
-
 import {
 	IDeleteParams,
 	IGetParams,
 	IGetFileParams,
 	IPersistParams,
 } from "@interfaces/api/baseManagerApi";
+import { api } from "./manager"
 
 export const baseManagerApi = api.injectEndpoints({
 	endpoints: (builder) => ({

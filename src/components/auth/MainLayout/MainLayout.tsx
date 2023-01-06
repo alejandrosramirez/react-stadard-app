@@ -1,8 +1,7 @@
 import { Card, Center, Container, Image, Stack } from '@mantine/core';
 
+import logo from "@assets/logo.svg";
 import { IMainLayout } from "@interfaces/components/auth/MainLayout";
-
-import reactLogo from "@assets/react.svg";
 
 import styles from "./styles";
 
@@ -12,17 +11,17 @@ const MainLayout = ({ children, className }: IMainLayout) => {
 	const containerClassName = className ? className : classes.container;
 
 	return (
-		<Container className={containerClassName}>
+		<div className={containerClassName}>
 			<Card px={20} py={30} className={classes.card}>
 				<Stack align="stretch" justify="center" spacing={30}>
 					<Center>
-						<Image src={reactLogo} alt="logo" width={100} />
+						<Image src={logo} alt="logo" width={100} />
 					</Center>
 
 					{children}
 				</Stack>
 			</Card>
-		</Container>
+		</div>
 	);
 };
 

@@ -1,15 +1,20 @@
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { AppShell, useMantineTheme } from "@mantine/core";
 
+import Header from "./Header";
+
 const DashboardLayout = () => {
 	const theme = useMantineTheme();
+
+	const [opened, setOpened] = useState(false);
 
 	return (
 		<AppShell
 			padding={0}
 			asideOffsetBreakpoint="sm"
 			navbarOffsetBreakpoint="sm"
-			header={<>Header</>}
+			header={<Header opened={opened} setOpened={setOpened} />}
 			navbar={<>Navbar</>}
 			styles={{
 				main: {

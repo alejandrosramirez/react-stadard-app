@@ -25,7 +25,7 @@ const RouteManager = () => {
 			children: [
 				{
 					index: true,
-					element: <Navigate to="/auth/login" />,
+					element: <Navigate to="auth/login" replace />,
 				},
 				{
 					path: "login",
@@ -36,11 +36,10 @@ const RouteManager = () => {
 		{
 			path: "dashboard",
 			element: <PrivateRoute component={DashboardLayout} />,
-			// element: <PublicRoute component={DashboardLayout} />,
 			children: [
 				{
 					index: true,
-					element: <Navigate to="/dashboard/home" replace />,
+					element: <Navigate to="dashboard/home" replace />,
 				},
 				{
 					path: "home",
@@ -49,8 +48,8 @@ const RouteManager = () => {
 			],
 		},
 		{
-			path: "",
-			element: <Navigate to="/dashboard/home" replace />,
+			path: "/",
+			element: <Navigate to="dashboard/home" replace />,
 		},
 		{
 			path: "*",
@@ -58,7 +57,7 @@ const RouteManager = () => {
 				{ path: "403", element: <P403 /> },
 				{ path: "404", element: <P404 /> },
 				{ path: "500", element: <P500 /> },
-				{ path: "*", element: <Navigate to="/404" replace /> },
+				{ path: "*", element: <Navigate to="404" replace /> },
 			],
 		},
 	]);
