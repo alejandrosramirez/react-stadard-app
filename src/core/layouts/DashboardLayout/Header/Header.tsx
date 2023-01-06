@@ -1,5 +1,6 @@
 import { Burger, Header as MantineHeader, MediaQuery } from "@mantine/core";
 
+import { ToggleTheme } from "@core/components";
 import { IHeader } from "@interfaces/core/layouts/DashboardLayout/Header";
 import styles from "./styles";
 
@@ -19,9 +20,24 @@ const Header = ({ opened, setOpened }: IHeader) => {
 							onClick={() => setOpened((o) => !o)}
 						/>
 					</MediaQuery>
+
+
 				</div>
 
-				<div className={classes.tools}></div>
+				<div className={classes.tools}>
+					<div className={classes.leftTools}>
+						<MediaQuery
+							smallerThan="sm"
+							styles={{ display: "none" }}
+						>
+							<h1>Hi</h1>
+						</MediaQuery>
+					</div>
+
+					<div className={classes.rightTools}>
+						<ToggleTheme />
+					</div>
+				</div>
 			</div>
 		</MantineHeader>
 	);

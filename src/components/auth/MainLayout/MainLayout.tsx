@@ -1,4 +1,4 @@
-import { Card, Center, Container, Image, Stack } from '@mantine/core';
+import { Card, Center, Image, Stack } from "@mantine/core";
 
 import logo from "@assets/logo.svg";
 import { IMainLayout } from "@interfaces/components/auth/MainLayout";

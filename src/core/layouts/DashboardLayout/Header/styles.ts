@@ -45,7 +45,7 @@ const styles = createStyles((theme) => ({
 		},
 	},
 
-	searchContainer: {
+	leftTools: {
 		flex: "60% 1 0",
 	},
 
