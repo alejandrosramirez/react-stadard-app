@@ -10,12 +10,10 @@ const PrivateRoute = ({ component: Component, ...rest }: IPrivateRoute) => {
 		shallowEqual
 	);
 
-	console.log(isLogged);
-
 	return isLogged ? (
 		<Component {...rest} />
 	) : (
-		<Navigate to={"auth"} replace={true} />
+		<Navigate to={"/auth"} replace />
 	);
 };
 

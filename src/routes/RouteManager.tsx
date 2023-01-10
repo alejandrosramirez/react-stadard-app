@@ -20,12 +20,16 @@ const P500 = Loader(lazy(() => import("@pages/P500")));
 const RouteManager = () => {
 	return useRoutes([
 		{
+			path: "/",
+			element: <Navigate to={"/dashboard/home"} replace />,
+		},
+		{
 			path: "auth",
 			element: <PublicRoute component={AuthLayout} />,
 			children: [
 				{
 					index: true,
-					element: <Navigate to="auth/login" replace />,
+					element: <Navigate to={"/auth/login"} replace />,
 				},
 				{
 					path: "login",
@@ -39,7 +43,7 @@ const RouteManager = () => {
 			children: [
 				{
 					index: true,
-					element: <Navigate to="dashboard/home" replace />,
+					element: <Navigate to={"/dashboard/home"} replace />,
 				},
 				{
 					path: "home",
@@ -48,16 +52,12 @@ const RouteManager = () => {
 			],
 		},
 		{
-			path: "/",
-			element: <Navigate to="dashboard/home" replace />,
-		},
-		{
 			path: "*",
 			children: [
 				{ path: "403", element: <P403 /> },
 				{ path: "404", element: <P404 /> },
 				{ path: "500", element: <P500 /> },
-				{ path: "*", element: <Navigate to="404" replace /> },
+				{ path: "*", element: <Navigate to={"404"} replace /> },
 			],
 		},
 	]);

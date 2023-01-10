@@ -3,6 +3,7 @@ import { PasswordInput } from "@mantine/core";
 import { useFocusWithin } from "@mantine/hooks";
 import { IconEye as Eye, IconEyeOff as EyeOff } from "@tabler/icons";
 
+import styles from "@core/components/HookForm/styles";
 import {
 	IRHFPasswordInput,
 	IGetVisibilityIcon,
@@ -16,6 +17,8 @@ const RHFPasswordInput = ({
 }: IRHFPasswordInput) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
+
+	const { classes } = styles();
 
 	const handleOnChange =
 		(fieldOnChange: (value: any) => void) => (event: any) => {
@@ -44,6 +47,14 @@ const RHFPasswordInput = ({
 					visibilityToggleIcon={getVisibilityIcon}
 					onChange={handleOnChange(field.onChange)}
 					autoComplete="off"
+					classNames={{
+						innerInput: classes.innerInput,
+						invalid: classes.invalidPassword,
+						input: classes.inputPassword,
+						label: `${classes.label} ${
+							error && classes.labelError
+						}`,
+					}}
 				/>
 			)}
 		/>

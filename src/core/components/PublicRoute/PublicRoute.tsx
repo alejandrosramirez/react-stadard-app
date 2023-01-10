@@ -10,10 +10,8 @@ const PublicRoute = ({ component: Component }: IPublicRoute) => {
 		shallowEqual
 	);
 
-	console.log(isLogged);
-
 	return isLogged ? (
-		<Navigate to={"dashboard"} replace={true} />
+		<Navigate to={"/dashboard"} replace />
 	) : (
 		<Component />
 	);
