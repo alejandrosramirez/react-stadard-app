@@ -2,7 +2,6 @@ import { Card, Center, Image, Stack } from "@mantine/core";
 
 import logo from "@assets/logo.svg";
 import { IMainLayout } from "@interfaces/components/auth/MainLayout";
-
 import styles from "./styles";
 
 const MainLayout = ({ children, className }: IMainLayout) => {

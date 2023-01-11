@@ -5,7 +5,9 @@ export interface IFileValue {
 	file: File;
 }
 
-export interface IRHFFileInput extends FileInputProps, RefAttributes<HTMLInputElement> {
+export interface IRHFFileInput
+	extends FileInputProps,
+		RefAttributes<HTMLInputElement> {
 	label?: string;
 	name: string;
 }

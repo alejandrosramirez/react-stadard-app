@@ -26,7 +26,9 @@ const RHFTextInput = ({ label, name, ...rest }: IRHFTextInput) => {
 					classNames={{
 						invalid: classes.invalid,
 						input: classes.input,
-						label: `${classes.label} ${error && classes.labelError}`,
+						label: `${classes.label} ${
+							error && classes.labelError
+						}`,
 					}}
 				/>
 			)}

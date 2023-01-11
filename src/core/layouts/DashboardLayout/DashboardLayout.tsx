@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { AppShell, useMantineTheme } from "@mantine/core";
 
 import Header from "./Header";
+import Navbar from "./Navbar";
 
 const DashboardLayout = () => {
 	const theme = useMantineTheme();
@@ -15,7 +16,7 @@ const DashboardLayout = () => {
 			asideOffsetBreakpoint="sm"
 			navbarOffsetBreakpoint="sm"
 			header={<Header opened={opened} setOpened={setOpened} />}
-			navbar={<>Navbar</>}
+			navbar={<Navbar opened={opened} />}
 			styles={{
 				main: {
 					background:

@@ -5,6 +5,6 @@ import { JSXElementConstructor, ReactElement } from "react";
 
 export interface IRoute {
 	component: (
-		props: any
+		props: any,
 	) => ReactElement<any, string | JSXElementConstructor<any>> | null;
 }

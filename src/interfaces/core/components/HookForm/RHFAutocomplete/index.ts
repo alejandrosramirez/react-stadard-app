@@ -1,7 +1,9 @@
 import { RefAttributes } from "react";
 import { AutocompleteProps } from "@mantine/core";
 
-export interface IRHFAutocomplete extends AutocompleteProps, RefAttributes<HTMLInputElement> {
+export interface IRHFAutocomplete
+	extends AutocompleteProps,
+		RefAttributes<HTMLInputElement> {
 	label?: string;
 	name: string;
 	param: string;

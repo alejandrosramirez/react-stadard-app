@@ -30,7 +30,7 @@ const buildFormData = (
 	data: any,
 	config?: IBuildFormDataConfig,
 	existingFormData?: FormData,
-	key?: any
+	key?: any,
 ) => {
 	config = config || {};
 	existingFormData = existingFormData || new FormData();
@@ -40,7 +40,7 @@ const buildFormData = (
 	config.booleansAsIntegers = initConfig(config.booleansAsIntegers);
 	config.allowEmptyArrays = initConfig(config.allowEmptyArrays);
 	config.noFilesWithArrayNotation = initConfig(
-		config.noFilesWithArrayNotation
+		config.noFilesWithArrayNotation,
 	);
 	config.dotsForObjectNotation = initConfig(config.dotsForObjectNotation);
 

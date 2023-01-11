@@ -6,10 +6,10 @@ export const theme: MantineThemeOverride = {
 	fontFamily: "'Montserrat', sans-serif",
 	primaryShade: 6,
 	breakpoints: {
-		xl : 1600,
-		lg : 1200,
-		md : 1000,
-		sm : 768,
-		xs : 576,
+		xl: 1600,
+		lg: 1200,
+		md: 1000,
+		sm: 768,
+		xs: 576,
 	},
 };

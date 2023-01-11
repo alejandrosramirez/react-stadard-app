@@ -8,13 +8,14 @@ const RHFSwitch = ({ label, name, onChange, ...rest }: IRHFSwitch) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
 
-	const handleOnChange = (fieldOnChange: (value: any) => void) => (event: any) => {
-		if (typeof onChange === "function") {
-			onChange(event);
-		}
+	const handleOnChange =
+		(fieldOnChange: (value: any) => void) => (event: any) => {
+			if (typeof onChange === "function") {
+				onChange(event);
+			}
 
-		fieldOnChange(event);
-	}
+			fieldOnChange(event);
+		};
 
 	return (
 		<Controller

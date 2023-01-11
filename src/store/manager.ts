@@ -22,7 +22,7 @@ const reducers = combineReducers({
 			...acc,
 			[key]: value.reducer,
 		}),
-		{}
+		{},
 	),
 	[api.reducerPath]: api.reducer,
 });

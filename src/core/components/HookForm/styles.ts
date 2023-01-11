@@ -73,8 +73,7 @@ const styles = createStyles(
 				theme.colors.red[theme.colorScheme === "dark" ? 7 : 6]
 			} !important`,
 		},
-
-	})
+	}),
 );
 
 export default styles;

@@ -7,7 +7,7 @@ import { ISlice } from "@interfaces/store/slices";
 const PrivateRoute = ({ component: Component, ...rest }: IPrivateRoute) => {
 	const { isLogged } = useSelector(
 		(state: ISlice) => state.authSlice,
-		shallowEqual
+		shallowEqual,
 	);
 
 	return isLogged ? (

@@ -15,7 +15,11 @@ const App = () => {
 			<BrowserRouter>
 				<PersistGate persistor={persistor}>
 					<CustomMantineProvider theme={theme}>
-						<NotificationsProvider limit={5} position="top-right" zIndex={2077}>
+						<NotificationsProvider
+							limit={5}
+							position="top-right"
+							zIndex={2077}
+						>
 							<RouteManager />
 						</NotificationsProvider>
 					</CustomMantineProvider>
@@ -23,6 +27,6 @@ const App = () => {
 			</BrowserRouter>
 		</Provider>
 	);
-}
+};
 
 export default App;

@@ -26,7 +26,7 @@
 			"@interfaces/*": ["./src/interfaces/*"],
 			"@pages/*": ["./src/pages/*"],
 			"@routes/*": ["./src/routes/*"],
-			"@store/*": ["./src/store/*"],
+			"@store/*": ["./src/store/*"]
 		}
 	},
 	"include": ["src"],

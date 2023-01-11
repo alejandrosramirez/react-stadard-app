@@ -20,5 +20,5 @@ export interface IGetFileParams {
 	module: string;
 	params: {
 		name: string;
-	}
+	};
 }

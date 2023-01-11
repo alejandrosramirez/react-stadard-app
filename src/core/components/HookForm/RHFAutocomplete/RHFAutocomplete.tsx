@@ -25,7 +25,7 @@ const RHFAutocomplete = ({
 
 	const [data, setData] = useState<any[]>([]);
 
-	const handleSearch = useDebouncedCallback(async (search: string = "") => {
+	const handleSearch = useDebouncedCallback(async (search = "") => {
 		const resp = await fetch({
 			module: param,
 			params: { ...query, search },

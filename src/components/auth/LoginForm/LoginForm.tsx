@@ -1,12 +1,16 @@
-import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
 import { Button, Grid } from "@mantine/core";
 import { IconLock as Lock, IconMail as Mail } from "@tabler/icons";
 
 import { authManagerApi } from "@api/authManagerApi";
-import { FormProvider, RHFPasswordInput, RHFTextInput } from "@core/components/HookForm";
-import { useHandleFormError, useLogin } from "@core/hooks";
+import {
+	FormProvider,
+	RHFPasswordInput,
+	RHFTextInput,
+} from "@core/components/HookForm";
+import { useHandleServerRequest, useLogin } from "@core/hooks";
 import { ILoginParams } from "@interfaces/api/authManagerApi";
 
 const { useLoginMutation } = authManagerApi;
@@ -15,7 +19,7 @@ const LoginForm = () => {
 	const { handleLogin } = useLogin();
 
 	const [submitForm] = useLoginMutation();
-	const { handleFormError } = useHandleFormError();
+	const { handleServerRequest } = useHandleServerRequest();
 
 	const loginSchema = Yup.object().shape({
 		email: Yup.string()
@@ -42,9 +46,13 @@ const LoginForm = () => {
 		handleLogin(user);
 	};
 
-	const { formState: { isSubmitting }, setError } = formMethods;
+	const {
+		formState: { isSubmitting },
+		setError,
+	} = formMethods;
 
-	const onSubmit = (data: ILoginParams) => handleFormError(() => handleSubmit(data), setError);
+	const onSubmit = (data: ILoginParams) =>
+		handleServerRequest(() => handleSubmit(data), setError);
 
 	return (
 		<FormProvider methods={formMethods} onSubmit={submitRHF(onSubmit)}>
@@ -68,11 +76,7 @@ const LoginForm = () => {
 				</Grid.Col>
 
 				<Grid.Col span={12}>
-					<Button
-						type="submit"
-						loading={isSubmitting}
-						fullWidth
-					>
+					<Button type="submit" loading={isSubmitting} fullWidth>
 						Iniciar Sesión
 					</Button>
 				</Grid.Col>
