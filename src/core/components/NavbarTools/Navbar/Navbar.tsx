@@ -7,15 +7,15 @@ import { navbarBaseWidth, navbarSmWidth } from "@core/constants";
 import { INavGroup } from "@interfaces/core/components/NavbarTools/NavGroup";
 import { INavLink } from "@interfaces/core/components/NavbarTools/NavLink";
 import { INavbar } from "@/interfaces/core/components/NavbarTools/Navbar";
-import LinksManager from "@routes/LinksManager";
-import styles from "./styles";
+import LinksManager from "@/routes/Links";
+import styles from "../styles";
 
 const Navbar = ({ opened }: INavbar) => {
 	const { classes, theme } = styles();
 
 	const [navbarWidth, setNavbarWidth] = useState(navbarBaseWidth);
 
-	const links = LinksManager.map((link: INavGroup | INavLink) => {
+	const links: JSX.Element[] = LinksManager.map((link: INavGroup | INavLink) => {
 		if ("links" in link) {
 			return <NavGroup {...link} key={link.label} />;
 		}

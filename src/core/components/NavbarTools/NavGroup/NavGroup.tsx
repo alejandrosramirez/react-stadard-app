@@ -1,21 +1,30 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { NavLink as ReactRouterDomNavLink } from "react-router-dom";
 import { Box, Collapse, Group, ThemeIcon, UnstyledButton } from "@mantine/core";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons";
 
+import { useActiveLink } from "@core/hooks";
 import { isValidArray } from "@helpers";
 import { INavGroup } from "@interfaces/core/components/NavbarTools/NavGroup";
 import styles from "../styles";
 
-const NavGroup = ({ icon: NavGroupIcon, label, links }: INavGroup) => {
-	const { classes, theme } = styles();
+const NavGroup = ({ icon: NavGroupIcon, label, links, root }: INavGroup) => {
+	const { classes, cx, theme } = styles();
+
+	const { activeLink, opened, toggle } = useActiveLink(root);
 
 	const hasLinks = isValidArray(links);
 
-	const [opened, setOpened] = useState(false);
+	// const [opened, setOpened] = useState(false);
 
 	const items = (hasLinks ? links : []).map(({ icon: Icon, label, to }) => (
-		<ReactRouterDomNavLink to={to} key={label} className={classes.sublink}>
+		<ReactRouterDomNavLink
+			to={to}
+			key={label}
+			className={cx(classes.sublink, {
+				[classes.activeSublink]: activeLink === to,
+			})}
+		>
 			<Box sx={{ display: "flex", alignItems: "center" }}>
 				<Icon size={14} />
 
@@ -28,10 +37,7 @@ const NavGroup = ({ icon: NavGroupIcon, label, links }: INavGroup) => {
 
 	return (
 		<>
-			<UnstyledButton
-				onClick={() => setOpened((o) => !o)}
-				className={classes.control}
-			>
+			<UnstyledButton onClick={() => toggle()} className={classes.control}>
 				<Group position="apart" spacing={0}>
 					<Box sx={{ display: "flex", alignItems: "center" }}>
 						<ThemeIcon variant="light" size={30}>

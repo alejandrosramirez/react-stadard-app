@@ -1,4 +1,4 @@
-import { Outlet as MainContentPage } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Box, useMantineTheme } from "@mantine/core";
 
 import { IStaticPageLayout } from "@interfaces/core/layouts/StaticPageLayout";
@@ -17,7 +17,7 @@ const StaticPageLayout = ({ px = 20, py = 20 }: IStaticPageLayout) => {
 						: theme.colors.gray[1],
 			}}
 		>
-			<MainContentPage />
+			<Outlet />
 		</Box>
 	);
 };

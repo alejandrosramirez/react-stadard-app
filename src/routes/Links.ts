@@ -1,27 +1,30 @@
 import { IconCopyright, IconGauge, IconTools, IconUsers } from "@tabler/icons";
 
-const LinksManager: Record<string, any> = [
+import { rootPaths } from "./Paths";
+
+const Links: Record<string, any> = [
 	{
 		icon: IconGauge,
 		label: "Escritorio",
-		to: "/home",
+		to: rootPaths.home,
 	},
 	{
 		icon: IconTools,
 		label: "Gestión",
+		root: rootPaths.management,
 		links: [
 			{
 				icon: IconUsers,
 				label: "Usuarios",
-				to: "/management/users",
+				to: `${rootPaths.management}/users`,
 			},
 			{
 				icon: IconCopyright,
 				label: "Roles",
-				to: "/management/roles",
+				to: `${rootPaths.management}/roles`,
 			},
 		],
 	},
 ];
 
-export default LinksManager;
+export default Links;

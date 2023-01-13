@@ -6,14 +6,15 @@ import { INavLink } from "@interfaces/core/components/NavbarTools/NavLink";
 import styles from "../styles";
 
 const NavLink = ({ icon: NavLinkIcon, label, to }: INavLink) => {
-	const { classes } = styles();
+	const { classes, cx } = styles();
 
 	const { activeLink } = useActiveLink();
 
-	console.log("acctive: ", activeLink);
-
 	return (
-		<ReactRouterDomNavLink to={to} className={classes.link}>
+		<ReactRouterDomNavLink
+			to={to}
+			className={cx(classes.link, { [classes.active]: activeLink === to })}
+		>
 			<UnstyledButton className={classes.control}>
 				<Group position="apart" spacing={0}>
 					<Box sx={{ display: "flex", alignItems: "center" }}>

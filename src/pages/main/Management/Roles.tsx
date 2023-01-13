@@ -1,7 +1,5 @@
-import { Text } from "@mantine/core";
-
 const Roles = () => {
-	return <Text>Roles</Text>;
+	return <div>Roles</div>;
 };
 
 export default Roles;

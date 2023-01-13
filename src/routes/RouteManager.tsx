@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { useRoutes, Navigate } from "react-router-dom";
+import { useRoutes, Navigate, Outlet } from "react-router-dom";
 
 import { Loader, PrivateRoute, PublicRoute } from "@core/components";
 import { StaticPageLayout } from "@core/layouts";
@@ -13,7 +13,8 @@ const Home = Loader(lazy(() => import("@pages/main/Home")));
 
 // ** Management
 // Users
-const Users = Loader(lazy(() => import("@pages/main/Management/Users")));
+const UsersList = Loader(lazy(() => import("@/pages/main/Management/Users/UsersList")));
+const UsersNew = Loader(lazy(() => import("@/pages/main/Management/Users/UsersNew")));
 const Roles = Loader(lazy(() => import("@pages/main/Management/Roles")));
 
 // ** Error Pages
@@ -55,7 +56,17 @@ const RouteManager = () => {
 				},
 				{
 					path: "users",
-					element: <Users />,
+					element: <Outlet />,
+					children: [
+						{
+							path: "",
+							element: <UsersList />,
+						},
+						{
+							path: "new",
+							element: <UsersNew />,
+						},
+					],
 				},
 				{
 					path: "roles",

@@ -9,5 +9,6 @@ export interface INavGroupLink {
 export interface INavGroup {
 	icon: TablerIcon;
 	label: string;
+	root: string;
 	links: INavGroupLink[];
 }

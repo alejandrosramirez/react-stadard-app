@@ -1,11 +1,9 @@
-import { Text } from "@mantine/core";
-
 import { PageLayout } from "@core/layouts";
 
 const Home = () => {
 	return (
 		<PageLayout>
-			<Text>Home</Text>
+			<div>Home</div>
 		</PageLayout>
 	);
 };
