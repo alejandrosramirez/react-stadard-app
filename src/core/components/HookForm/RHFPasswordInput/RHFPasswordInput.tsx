@@ -9,25 +9,19 @@ import {
 	IGetVisibilityIcon,
 } from "@interfaces/core/components/HookForm/RHFPasswordInput";
 
-const RHFPasswordInput = ({
-	label,
-	name,
-	onChange,
-	...rest
-}: IRHFPasswordInput) => {
+const RHFPasswordInput = ({ label, name, onChange, ...rest }: IRHFPasswordInput) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
 
 	const { classes } = styles();
 
-	const handleOnChange =
-		(fieldOnChange: (value: any) => void) => (event: any) => {
-			if (typeof onChange === "function") {
-				onChange(event);
-			}
+	const handleOnChange = (fieldOnChange: (value: any) => void) => (event: any) => {
+		if (typeof onChange === "function") {
+			onChange(event);
+		}
 
-			fieldOnChange(event);
-		};
+		fieldOnChange(event);
+	};
 
 	const getVisibilityIcon = ({ reveal, size }: IGetVisibilityIcon) =>
 		reveal ? <EyeOff size={size} /> : <Eye size={size} />;
@@ -51,9 +45,7 @@ const RHFPasswordInput = ({
 						innerInput: classes.innerInput,
 						invalid: classes.invalidPassword,
 						input: classes.inputPassword,
-						label: `${classes.label} ${
-							error && classes.labelError
-						}`,
+						label: `${classes.label} ${error && classes.labelError}`,
 					}}
 				/>
 			)}

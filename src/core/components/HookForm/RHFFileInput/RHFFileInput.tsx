@@ -5,12 +5,7 @@ import { useFocusWithin } from "@mantine/hooks";
 import { IRHFFileInput } from "@interfaces/core/components/HookForm/RHFFileInput";
 import ValueComponent from "./ValueComponent";
 
-const RHFFileInput = ({
-	label,
-	name,
-	multiple = false,
-	...rest
-}: IRHFFileInput) => {
+const RHFFileInput = ({ label, name, multiple = false, ...rest }: IRHFFileInput) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
 

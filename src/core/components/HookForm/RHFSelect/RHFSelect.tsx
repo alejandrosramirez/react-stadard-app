@@ -4,13 +4,7 @@ import { useFocusWithin } from "@mantine/hooks";
 
 import { IRHFSelect } from "@interfaces/core/components/HookForm/RHFSelect";
 
-const RHFSelect = ({
-	label,
-	name,
-	clearable = true,
-	data,
-	...rest
-}: IRHFSelect) => {
+const RHFSelect = ({ label, name, clearable = true, data, ...rest }: IRHFSelect) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
 

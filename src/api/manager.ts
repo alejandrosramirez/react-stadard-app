@@ -32,7 +32,7 @@ const baseQueryWithReAuth = async (
 	return result;
 };
 
-const baseQueryWithRetry = retry(baseQueryWithReAuth, { maxRetries: 2 });
+const baseQueryWithRetry = retry(baseQueryWithReAuth, { maxRetries: 1 });
 
 export const api = createApi({
 	reducerPath: "api",

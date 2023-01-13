@@ -21,8 +21,7 @@ const isBlob = (value: any) =>
 const isFile = (value: any) =>
 	isBlob(value) &&
 	typeof value.name === "string" &&
-	(isObject(value.lastModifiedDate) ||
-		typeof value.lastModified === "number");
+	(isObject(value.lastModifiedDate) || typeof value.lastModified === "number");
 
 const initConfig = (value: any) => (isUndefined(value) ? false : value);
 
@@ -39,9 +38,7 @@ const buildFormData = (
 	config.nullsAsUndefineds = initConfig(config.nullsAsUndefineds);
 	config.booleansAsIntegers = initConfig(config.booleansAsIntegers);
 	config.allowEmptyArrays = initConfig(config.allowEmptyArrays);
-	config.noFilesWithArrayNotation = initConfig(
-		config.noFilesWithArrayNotation,
-	);
+	config.noFilesWithArrayNotation = initConfig(config.noFilesWithArrayNotation);
 	config.dotsForObjectNotation = initConfig(config.dotsForObjectNotation);
 
 	if (isUndefined(data)) {
@@ -77,10 +74,7 @@ const buildFormData = (
 			const value = data[prop];
 
 			if (isArray(value)) {
-				while (
-					prop.length > 2 &&
-					prop.lastIndexOf("[]") === prop.length - 2
-				) {
+				while (prop.length > 2 && prop.lastIndexOf("[]") === prop.length - 2) {
 					prop = prop.substring(0, prop.length - 2);
 				}
 			}

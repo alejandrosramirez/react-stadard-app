@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import { useMantineTheme, Container } from "@mantine/core";
+import { useMantineTheme, Box } from "@mantine/core";
 
 const AuthLayout = () => {
 	const theme = useMantineTheme();
 
 	return (
-		<div
+		<Box
 			style={{
 				background:
 					theme.colorScheme === "dark"
@@ -14,7 +14,7 @@ const AuthLayout = () => {
 			}}
 		>
 			<Outlet />
-		</div>
+		</Box>
 	);
 };
 

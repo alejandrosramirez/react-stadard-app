@@ -5,11 +5,7 @@ import { Button, Grid } from "@mantine/core";
 import { IconLock as Lock, IconMail as Mail } from "@tabler/icons";
 
 import { authManagerApi } from "@api/authManagerApi";
-import {
-	FormProvider,
-	RHFPasswordInput,
-	RHFTextInput,
-} from "@core/components/HookForm";
+import { FormProvider, RHFPasswordInput, RHFTextInput } from "@core/components/HookForm";
 import { useHandleServerRequest, useLogin } from "@core/hooks";
 import { ILoginParams } from "@interfaces/api/authManagerApi";
 

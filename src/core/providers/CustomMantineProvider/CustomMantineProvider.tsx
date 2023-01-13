@@ -1,8 +1,4 @@
-import {
-	ColorScheme,
-	ColorSchemeProvider,
-	MantineProvider,
-} from "@mantine/core";
+import { ColorScheme, ColorSchemeProvider, MantineProvider } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
 
 import { ICustomMantineProvider } from "@interfaces/core/providers/CustomMantineProvider";

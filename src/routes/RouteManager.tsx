@@ -2,20 +2,24 @@ import { lazy } from "react";
 import { useRoutes, Navigate } from "react-router-dom";
 
 import { Loader, PrivateRoute, PublicRoute } from "@core/components";
-import { AuthLayout, DashboardLayout } from "@core/layouts";
+import { AuthLayout, DashboardLayout, PageLayout } from "@core/layouts";
 
-// Auth
+// ** Auth
 // // Login
 const Login = Loader(lazy(() => import("@pages/auth/Login")));
 
-// Dashboard
+// ** Dashboard
 // // Home
 const Home = Loader(lazy(() => import("@pages/dashboard/Home")));
 
+// // ** Management
+// // // Users
+const Users = Loader(lazy(() => import("@pages/dashboard/Management/Users")));
+
 // Misc Pages
-const P403 = Loader(lazy(() => import("@pages/P403")));
-const P404 = Loader(lazy(() => import("@pages/P404")));
-const P500 = Loader(lazy(() => import("@pages/P500")));
+const P403 = Loader(lazy(() => import("@/pages/errors/P403")));
+const P404 = Loader(lazy(() => import("@/pages/errors/P404")));
+const P500 = Loader(lazy(() => import("@/pages/errors/P500")));
 
 const RouteManager = () => {
 	return useRoutes([
@@ -48,6 +52,20 @@ const RouteManager = () => {
 				{
 					path: "home",
 					element: <Home />,
+				},
+			],
+		},
+		{
+			path: "management",
+			element: <PageLayout />,
+			children: [
+				{
+					index: true,
+					element: <Navigate to={"/dashboard/management/users"} replace />,
+				},
+				{
+					path: "users",
+					element: <Users />,
 				},
 			],
 		},

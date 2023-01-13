@@ -29,7 +29,7 @@
 				"bracketSpacing": true,
 				"endOfLine": "auto",
 				"jsxSingleQuote": false,
-				"printWidth": 80,
+				"printWidth": 90,
 				"quoteProps": "as-needed",
 				"semi": true,
 				"singleQuote": false,

@@ -20,13 +20,11 @@ const useHandleServerRequest = () => {
 					// handle your own validation server errors from selected backend
 					// this is a Laravel example
 					// by the way don't use it if it's not necessary
-					Object.entries(data.message as Record<string, any>).map(
-						(error) => {
-							setError(error[0], {
-								message: error[1].join("<br />"),
-							});
-						},
-					);
+					Object.entries(data.message as Record<string, any>).map((error) => {
+						setError(error[0], {
+							message: error[1].join("<br />"),
+						});
+					});
 				}
 			} else {
 				// Show a custom message with any other status code
