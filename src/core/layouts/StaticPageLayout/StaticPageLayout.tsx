@@ -1,8 +1,9 @@
+import { Outlet as MainContentPage } from "react-router-dom";
 import { Box, useMantineTheme } from "@mantine/core";
 
-import { IPageLayout } from "@/interfaces/core/layouts/PageLayout";
+import { IStaticPageLayout } from "@interfaces/core/layouts/StaticPageLayout";
 
-const PageLayout = ({ children, px = 20, py = 20 }: IPageLayout) => {
+const StaticPageLayout = ({ px = 20, py = 20 }: IStaticPageLayout) => {
 	const theme = useMantineTheme();
 
 	return (
@@ -16,9 +17,9 @@ const PageLayout = ({ children, px = 20, py = 20 }: IPageLayout) => {
 						: theme.colors.gray[1],
 			}}
 		>
-			{children}
+			<MainContentPage />
 		</Box>
 	);
 };
 
-export default PageLayout;
+export default StaticPageLayout;

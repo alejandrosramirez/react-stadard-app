@@ -11,6 +11,7 @@ const PrivateRoute = ({ component: Component, ...rest }: IPrivateRoute) => {
 	if (!isLogged) {
 		return <Navigate to={"/auth"} replace />;
 	}
+
 	return (
 		<AppShell>
 			<Component {...rest} />

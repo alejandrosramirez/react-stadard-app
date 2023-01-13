@@ -4,7 +4,7 @@ import { Box, Collapse, Group, ThemeIcon, UnstyledButton } from "@mantine/core";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons";
 
 import { isValidArray } from "@helpers";
-import { INavGroup } from "@/interfaces/core/components/Navbar/NavGroup";
+import { INavGroup } from "@interfaces/core/components/NavbarTools/NavGroup";
 import styles from "../styles";
 
 const NavGroup = ({ icon: NavGroupIcon, label, links }: INavGroup) => {
@@ -14,9 +14,13 @@ const NavGroup = ({ icon: NavGroupIcon, label, links }: INavGroup) => {
 
 	const [opened, setOpened] = useState(false);
 
-	const items = (hasLinks ? links : []).map(({ label, to }) => (
+	const items = (hasLinks ? links : []).map(({ icon: Icon, label, to }) => (
 		<ReactRouterDomNavLink to={to} key={label} className={classes.sublink}>
-			{label}
+			<Box sx={{ display: "flex", alignItems: "center" }}>
+				<Icon size={14} />
+
+				<Box ml="md">{label}</Box>
+			</Box>
 		</ReactRouterDomNavLink>
 	));
 

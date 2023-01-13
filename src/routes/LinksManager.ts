@@ -1,18 +1,24 @@
-import { IconGauge } from "@tabler/icons";
+import { IconCopyright, IconGauge, IconTools, IconUsers } from "@tabler/icons";
 
 const LinksManager: Record<string, any> = [
 	{
 		icon: IconGauge,
 		label: "Escritorio",
-		to: "/dashboard/home",
+		to: "/home",
 	},
 	{
-		icon: IconGauge,
+		icon: IconTools,
 		label: "Gestión",
 		links: [
 			{
+				icon: IconUsers,
 				label: "Usuarios",
-				to: "/dashboard/management/users",
+				to: "/management/users",
+			},
+			{
+				icon: IconCopyright,
+				label: "Roles",
+				to: "/management/roles",
 			},
 		],
 	},

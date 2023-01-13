@@ -9,12 +9,12 @@ const styles = createStyles((theme) => {
 			padding: `${theme.spacing.xs}px ${theme.spacing.md}px`,
 			color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
 			fontSize: theme.fontSizes.sm,
-
+			borderRadius: theme.radius.md,
 			"&:hover": {
 				backgroundColor:
 					theme.colorScheme === "dark"
 						? theme.colors.gray[8]
-						: theme.colors.gray[0],
+						: theme.colors.gray[2],
 				color: theme.colorScheme === "dark" ? theme.white : theme.black,
 			},
 		},
@@ -30,22 +30,19 @@ const styles = createStyles((theme) => {
 			display: "block",
 			textDecoration: "none",
 			padding: `${theme.spacing.xs}px ${theme.spacing.md}px`,
-			paddingLeft: 31,
-			marginLeft: 30,
+			paddingLeft: 25,
+			marginLeft: 25,
 			fontSize: theme.fontSizes.sm,
+			borderRadius: theme.radius.md,
 			color:
 				theme.colorScheme === "dark"
 					? theme.colors.dark[0]
 					: theme.colors.gray[7],
-			borderLeft: `1px solid ${
-				theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
-			}`,
-
 			"&:hover": {
 				backgroundColor:
 					theme.colorScheme === "dark"
 						? theme.colors.gray[8]
-						: theme.colors.gray[0],
+						: theme.colors.gray[2],
 				color: theme.colorScheme === "dark" ? theme.white : theme.black,
 			},
 		},

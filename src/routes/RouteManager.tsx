@@ -2,21 +2,21 @@ import { lazy } from "react";
 import { useRoutes, Navigate } from "react-router-dom";
 
 import { Loader, PrivateRoute, PublicRoute } from "@core/components";
-import { AuthLayout, DashboardLayout, PageLayout } from "@core/layouts";
+import { StaticPageLayout } from "@core/layouts";
 
 // ** Auth
-// // Login
+// Login
 const Login = Loader(lazy(() => import("@pages/auth/Login")));
 
-// ** Dashboard
-// // Home
-const Home = Loader(lazy(() => import("@pages/dashboard/Home")));
+// ** Home
+const Home = Loader(lazy(() => import("@pages/main/Home")));
 
-// // ** Management
-// // // Users
-const Users = Loader(lazy(() => import("@pages/dashboard/Management/Users")));
+// ** Management
+// Users
+const Users = Loader(lazy(() => import("@pages/main/Management/Users")));
+const Roles = Loader(lazy(() => import("@pages/main/Management/Roles")));
 
-// Misc Pages
+// ** Error Pages
 const P403 = Loader(lazy(() => import("@/pages/errors/P403")));
 const P404 = Loader(lazy(() => import("@/pages/errors/P404")));
 const P500 = Loader(lazy(() => import("@/pages/errors/P500")));
@@ -25,11 +25,11 @@ const RouteManager = () => {
 	return useRoutes([
 		{
 			path: "/",
-			element: <Navigate to={"/dashboard/home"} replace />,
+			element: <Navigate to={"/home"} replace />,
 		},
 		{
 			path: "auth",
-			element: <PublicRoute component={AuthLayout} />,
+			element: <PublicRoute component={StaticPageLayout} />,
 			children: [
 				{
 					index: true,
@@ -42,30 +42,24 @@ const RouteManager = () => {
 			],
 		},
 		{
-			path: "dashboard",
-			element: <PrivateRoute component={DashboardLayout} />,
-			children: [
-				{
-					index: true,
-					element: <Navigate to={"/dashboard/home"} replace />,
-				},
-				{
-					path: "home",
-					element: <Home />,
-				},
-			],
+			path: "home",
+			element: <PrivateRoute component={Home} />,
 		},
 		{
 			path: "management",
-			element: <PageLayout />,
+			element: <PrivateRoute component={StaticPageLayout} />,
 			children: [
 				{
 					index: true,
-					element: <Navigate to={"/dashboard/management/users"} replace />,
+					element: <Navigate to={"/management/users"} replace />,
 				},
 				{
 					path: "users",
 					element: <Users />,
+				},
+				{
+					path: "roles",
+					element: <Roles />,
 				},
 			],
 		},

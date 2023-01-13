@@ -7,7 +7,11 @@ import { ISlice } from "@interfaces/store/slices";
 const PublicRoute = ({ component: Component }: IPublicRoute) => {
 	const { isLogged } = useSelector((state: ISlice) => state.authSlice, shallowEqual);
 
-	return isLogged ? <Navigate to={"/dashboard"} replace /> : <Component />;
+	if (isLogged) {
+		return <Navigate to={"/home"} replace />;
+	}
+
+	return <Component />;
 };
 
 export default PublicRoute;

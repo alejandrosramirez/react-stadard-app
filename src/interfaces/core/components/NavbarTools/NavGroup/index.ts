@@ -1,6 +1,7 @@
 import { TablerIcon } from "@tabler/icons";
 
-export interface INavGroupLinks {
+export interface INavGroupLink {
+	icon: TablerIcon;
 	label: string;
 	to: string;
 }
@@ -8,5 +9,5 @@ export interface INavGroupLinks {
 export interface INavGroup {
 	icon: TablerIcon;
 	label: string;
-	links: INavGroupLinks[];
+	links: INavGroupLink[];
 }

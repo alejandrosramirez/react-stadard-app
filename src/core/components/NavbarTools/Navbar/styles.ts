@@ -24,8 +24,9 @@ const styles = createStyles((theme) => ({
 	},
 
 	linksInner: {
-		paddingTop: theme.spacing.xl,
-		paddingBottom: theme.spacing.xl,
+		paddingLeft: theme.spacing.md - theme.spacing.xs,
+		paddingRight: theme.spacing.md - theme.spacing.xs,
+		paddingBottom: theme.spacing.md,
 	},
 
 	footer: {

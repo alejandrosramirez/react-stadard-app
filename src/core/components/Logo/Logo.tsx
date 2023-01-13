@@ -10,8 +10,8 @@ const Logo = () => {
 		<Box>
 			<Group position="apart">
 				<Image
-					width={55}
-					height={50}
+					width={60}
+					height={55}
 					src={logo}
 					alt="logo"
 					classNames={{

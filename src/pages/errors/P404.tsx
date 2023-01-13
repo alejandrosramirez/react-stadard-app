@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { Button, Container, Group, Text, Title } from "@mantine/core";
 
 import styles from "./styles";
 
 const P404 = () => {
+	const navigate = useNavigate();
+
 	const { classes } = styles();
 
 	return (
@@ -13,7 +16,7 @@ const P404 = () => {
 				Desafortunadamente la página que desea consultar no existe.
 			</Text>
 			<Group position="center">
-				<Button variant="subtle" size="md">
+				<Button variant="subtle" size="md" onClick={() => navigate("/home")}>
 					Volver al inicio
 				</Button>
 			</Group>

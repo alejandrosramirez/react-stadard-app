@@ -1,5 +1,5 @@
 import { Provider } from "react-redux";
-import { BrowserRouter, HashRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
 
 import { NotificationsProvider } from "@mantine/notifications";
@@ -12,7 +12,7 @@ import { theme } from "@/theme";
 const App = () => {
 	return (
 		<Provider store={store}>
-			<BrowserRouter>
+			<HashRouter>
 				<PersistGate persistor={persistor}>
 					<CustomMantineProvider theme={theme}>
 						<NotificationsProvider
@@ -24,7 +24,7 @@ const App = () => {
 						</NotificationsProvider>
 					</CustomMantineProvider>
 				</PersistGate>
-			</BrowserRouter>
+			</HashRouter>
 		</Provider>
 	);
 };
