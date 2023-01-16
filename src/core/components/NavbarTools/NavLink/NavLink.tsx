@@ -13,7 +13,7 @@ const NavLink = ({ icon: NavLinkIcon, label, to }: INavLink) => {
 	return (
 		<ReactRouterDomNavLink
 			to={to}
-			className={cx(classes.link, { [classes.active]: activeLink === to })}
+			className={cx(classes.link, { [classes.active]: to.includes(activeLink) })}
 		>
 			<UnstyledButton className={classes.control}>
 				<Group position="apart" spacing={0}>

@@ -7,3 +7,4 @@ export { default as LoadingScreen } from "./LoadingScreen";
 export { default as Logo } from "./Logo";
 export * from "./NavbarTools";
 export * from "./RouterTools";
+export { default as SimpleTable } from "./SimpleTable";

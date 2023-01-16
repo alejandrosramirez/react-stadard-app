@@ -1,24 +1,23 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const useActiveLink = (root?: string) => {
+const useActiveLink = () => {
 	const location = useLocation();
 
 	const [activeLink, setActiveLink] = useState("");
-	const [opened, setOpened] = useState(false);
 
 	useEffect(() => {
-		if (root) {
-			const hasChildren = location.pathname.includes(root);
-			setOpened(hasChildren ? true : false);
-		}
+		const splitedPath = location.pathname.split("/").filter(Boolean);
 
-		setActiveLink(location.pathname);
-	}, [location, root]);
+		const selectedPath =
+			splitedPath.length > 1
+				? `/${splitedPath[0]}/${splitedPath[1]}`
+				: `/${splitedPath[0]}`;
 
-	const toggle = () => setOpened((o) => !o);
+		setActiveLink(selectedPath);
+	}, [location]);
 
-	return { activeLink, opened, toggle };
+	return { activeLink };
 };
 
 export default useActiveLink;

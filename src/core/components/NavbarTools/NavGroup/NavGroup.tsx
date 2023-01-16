@@ -1,9 +1,8 @@
-// import { useState } from "react";
 import { NavLink as ReactRouterDomNavLink } from "react-router-dom";
 import { Box, Collapse, Group, ThemeIcon, UnstyledButton } from "@mantine/core";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons";
 
-import { useActiveLink } from "@core/hooks";
+import { useActiveGroup, useActiveLink } from "@core/hooks";
 import { isValidArray } from "@helpers";
 import { INavGroup } from "@interfaces/core/components/NavbarTools/NavGroup";
 import styles from "../styles";
@@ -11,18 +10,17 @@ import styles from "../styles";
 const NavGroup = ({ icon: NavGroupIcon, label, links, root }: INavGroup) => {
 	const { classes, cx, theme } = styles();
 
-	const { activeLink, opened, toggle } = useActiveLink(root);
+	const { opened, toggle } = useActiveGroup(root);
+	const { activeLink } = useActiveLink();
 
 	const hasLinks = isValidArray(links);
-
-	// const [opened, setOpened] = useState(false);
 
 	const items = (hasLinks ? links : []).map(({ icon: Icon, label, to }) => (
 		<ReactRouterDomNavLink
 			to={to}
 			key={label}
 			className={cx(classes.sublink, {
-				[classes.activeSublink]: activeLink === to,
+				[classes.activeSublink]: to.includes(activeLink),
 			})}
 		>
 			<Box sx={{ display: "flex", alignItems: "center" }}>

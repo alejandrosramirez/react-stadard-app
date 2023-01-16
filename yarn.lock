@@ -645,6 +645,18 @@
   resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-1.119.0.tgz#8c590bc5a563c8673a78ccd451bedabd584b376e"
   integrity sha512-Fk3Qq4w2SXcTjc/n1cuL5bccPkylrOMo7cYpQIf/yw6zP76LQV9dtLcHQUjFiUnaYuswR645CnURIhlafyAh9g==
 
+"@tanstack/react-table@^8.7.6":
+  version "8.7.6"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-table/-/react-table-8.7.6.tgz#1420d69da458fe13c08af73b6f3c98d5e49e63f6"
+  integrity sha512-/QijmMFeP7wDLBnr0MQ/5MlbXePbIL/1nOtkxBC9zvmBu4gDKJEDBqipUyM7Wc/iBpSd0IFyqBlvZvTPD9FYDA==
+  dependencies:
+    "@tanstack/table-core" "8.7.6"
+
+"@tanstack/table-core@8.7.6":
+  version "8.7.6"
+  resolved "https://registry.yarnpkg.com/@tanstack/table-core/-/table-core-8.7.6.tgz#5ad8a67ef6312c56c4a075326afcb2813c030a22"
+  integrity sha512-sqiNTMzB6cpyL8DFH6/VqW48SwiflLqxQqYpo2wNock7rdVGvlm0BLNI8vZUJbr1+fmmWmHwBvi5OMgZw8n1DA==
+
 "@tiptap/core@^2.0.0-beta.209":
   version "2.0.0-beta.209"
   resolved "https://registry.yarnpkg.com/@tiptap/core/-/core-2.0.0-beta.209.tgz#fd0edb8f87a5eea70c6a11e0d7e628738a10ef3f"
