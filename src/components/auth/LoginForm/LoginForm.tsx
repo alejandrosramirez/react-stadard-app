@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { Button, Grid } from "@mantine/core";
-import { IconLock as Lock, IconMail as Mail } from "@tabler/icons";
+import { IconLock as Lock, IconMail as Mail } from "@tabler/icons-react";
 
 import { authManagerApi } from "@api/authManagerApi";
 import { FormProvider, RHFPasswordInput, RHFTextInput } from "@core/components/HookForm";

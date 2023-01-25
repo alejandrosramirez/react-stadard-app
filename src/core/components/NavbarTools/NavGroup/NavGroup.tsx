@@ -1,6 +1,6 @@
 import { NavLink as ReactRouterDomNavLink } from "react-router-dom";
 import { Box, Collapse, Group, ThemeIcon, UnstyledButton } from "@mantine/core";
-import { IconChevronLeft, IconChevronRight } from "@tabler/icons";
+import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 
 import { useActiveGroup, useActiveLink } from "@core/hooks";
 import { isValidArray } from "@helpers";
@@ -46,7 +46,6 @@ const NavGroup = ({ icon: NavGroupIcon, label, links, root }: INavGroup) => {
 
 					<ChevronIcon
 						size={14}
-						stroke={1.5}
 						style={{
 							transform: opened
 								? `rotate(${theme.dir === "rtl" ? -90 : 90}deg)`

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Group, Menu, Text, UnstyledButton } from "@mantine/core";
-import { IconDoorExit as DoorExit } from "@tabler/icons";
+import { IconDoorExit as DoorExit } from "@tabler/icons-react";
 
 import { Avatar } from "@core/components";
 import { ISlice } from "@interfaces/store/slices";

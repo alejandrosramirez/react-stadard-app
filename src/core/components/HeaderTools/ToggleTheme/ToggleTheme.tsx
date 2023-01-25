@@ -1,5 +1,5 @@
 import { Switch, useMantineColorScheme, useMantineTheme } from "@mantine/core";
-import { IconMoonStars as MoonStars, IconSun as Sun } from "@tabler/icons";
+import { IconMoonStars as MoonStars, IconSun as Sun } from "@tabler/icons-react";
 
 import styles from "./styles";
 
@@ -14,8 +14,8 @@ const ToggleTheme = () => {
 			checked={colorScheme === "dark"}
 			onChange={() => toggleColorScheme()}
 			size="xl"
-			onLabel={<Sun color={theme.colors.yellow[4]} size={25} stroke={1.5} />}
-			offLabel={<MoonStars color={theme.colors.gray[6]} size={24} stroke={1.5} />}
+			onLabel={<Sun color={theme.colors.yellow[4]} size={25} />}
+			offLabel={<MoonStars color={theme.colors.gray[6]} size={24} />}
 			className={classes.switch}
 		/>
 	);

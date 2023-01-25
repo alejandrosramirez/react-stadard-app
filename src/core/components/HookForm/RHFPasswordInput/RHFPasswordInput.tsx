@@ -1,7 +1,7 @@
 import { Controller, useFormContext } from "react-hook-form";
 import { PasswordInput } from "@mantine/core";
 import { useFocusWithin } from "@mantine/hooks";
-import { IconEye as Eye, IconEyeOff as EyeOff } from "@tabler/icons";
+import { IconEye as Eye, IconEyeOff as EyeOff } from "@tabler/icons-react";
 
 import styles from "@core/components/HookForm/styles";
 import {

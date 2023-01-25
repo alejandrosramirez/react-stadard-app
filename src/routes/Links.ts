@@ -1,4 +1,4 @@
-import { IconCopyright, IconGauge, IconTools, IconUsers } from "@tabler/icons";
+import { IconCopyright, IconGauge, IconTools, IconUsers } from "@tabler/icons-react";
 
 import { rootPaths } from "./Paths";
 

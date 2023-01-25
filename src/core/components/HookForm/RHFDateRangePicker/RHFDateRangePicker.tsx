@@ -1,7 +1,7 @@
 import { Controller, useFormContext } from "react-hook-form";
 import { DateRangePicker } from "@mantine/dates";
 import { useFocusWithin } from "@mantine/hooks";
-import { IconCalendar as Calendar } from "@tabler/icons";
+import { IconCalendar as Calendar } from "@tabler/icons-react";
 
 import { IRHFDateRangePicker } from "@interfaces/core/components/HookForm/RHFDateRangePicker";
 

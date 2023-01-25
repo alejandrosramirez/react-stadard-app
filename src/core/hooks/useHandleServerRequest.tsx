@@ -1,6 +1,6 @@
 import { UseFormSetError } from "react-hook-form";
 import { showNotification } from "@mantine/notifications";
-import { IconX as X } from "@tabler/icons";
+import { IconX as X } from "@tabler/icons-react";
 
 import { IServerError } from "@interfaces/globals/serverError";
 
