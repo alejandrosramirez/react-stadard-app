@@ -1,7 +1,5 @@
-import { Text } from "@mantine/core";
-
 import { Auth, LoginForm } from "@components/auth";
-import Message from "@components/Message";
+import { Message } from "@core/components";
 
 const Login = () => {
 	return (

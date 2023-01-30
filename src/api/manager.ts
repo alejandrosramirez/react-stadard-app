@@ -2,13 +2,12 @@ import { createApi, fetchBaseQuery, retry } from "@reduxjs/toolkit/query/react";
 import { FetchArgs } from "@reduxjs/toolkit/dist/query";
 import { BaseQueryApi } from "@reduxjs/toolkit/dist/query/baseQueryTypes";
 
-import { IAuthSlice } from "@interfaces/store/slices/authSlice";
 import { removeUser } from "@store/slices/authSlice";
 
 const baseQuery = fetchBaseQuery({
 	baseUrl: import.meta.env.VITE_API_URL,
 	prepareHeaders: (headers, { getState }) => {
-		const { token } = getState() as IAuthSlice;
+		const { token } = getState() as STORE.Slices.IAuthSlice;
 
 		if (token) {
 			headers.set("Authorization", `Bearer ${token}`);

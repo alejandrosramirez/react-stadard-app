@@ -2,15 +2,13 @@ import { Controller, useFormContext } from "react-hook-form";
 import { MultiSelect } from "@mantine/core";
 import { useFocusWithin } from "@mantine/hooks";
 
-import { IRHFMultiSelect } from "@interfaces/core/components/HookForm/RHFMultiSelect";
-
 const RHFMultiSelect = ({
 	label,
 	name,
 	clearable = true,
 	data,
 	...rest
-}: IRHFMultiSelect) => {
+}: CORE.Components.IRHFMultiSelect) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
 

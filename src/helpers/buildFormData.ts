@@ -1,5 +1,3 @@
-import { IBuildFormDataConfig } from "@interfaces/helpers/buildFormData";
-
 const isUndefined = (value: any) => value === undefined;
 
 const isNull = (value: any) => value === null;
@@ -27,7 +25,7 @@ const initConfig = (value: any) => (isUndefined(value) ? false : value);
 
 const buildFormData = (
 	data: any,
-	config?: IBuildFormDataConfig,
+	config?: HELPERS.IBuildFormData,
 	existingFormData?: FormData,
 	key?: any,
 ) => {

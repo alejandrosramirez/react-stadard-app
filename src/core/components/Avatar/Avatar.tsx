@@ -1,9 +1,14 @@
 import { Avatar as MantineAvatar, Text } from "@mantine/core";
 
 import { getInitials } from "@helpers";
-import { IAvatar } from "@interfaces/core/components/Avatar";
 
-const Avatar = ({ name, borderSize = 1, borderColor, icon: Icon, ...rest }: IAvatar) => {
+const Avatar = ({
+	name,
+	borderSize = 1,
+	borderColor,
+	icon: Icon,
+	...rest
+}: CORE.Components.IAvatar) => {
 	return (
 		<MantineAvatar
 			{...rest}

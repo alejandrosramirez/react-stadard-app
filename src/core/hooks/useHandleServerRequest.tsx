@@ -2,8 +2,6 @@ import { UseFormSetError } from "react-hook-form";
 import { showNotification } from "@mantine/notifications";
 import { IconX as X } from "@tabler/icons-react";
 
-import { IServerError } from "@interfaces/globals/serverError";
-
 const useHandleServerRequest = () => {
 	const handleServerRequest = async (
 		onRequesting: () => Promise<void>,
@@ -12,7 +10,7 @@ const useHandleServerRequest = () => {
 		try {
 			await onRequesting();
 		} catch (error) {
-			const { data } = error as IServerError;
+			const { data } = error as GENERAL.IServerError;
 
 			if (data.status === 422) {
 				if (typeof setError === "function") {

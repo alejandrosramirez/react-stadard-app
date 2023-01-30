@@ -2,9 +2,8 @@ import { useState } from "react";
 import { AppShell as MantineAppShell, useMantineTheme } from "@mantine/core";
 
 import { Header, Navbar } from "@core/components";
-import { IAppShell } from "@interfaces/core/components/AppShell";
 
-const AppShell = ({ children }: IAppShell) => {
+const AppShell = ({ children }: CORE.Components.IAppShell) => {
 	const theme = useMantineTheme();
 
 	const [opened, setOpened] = useState(false);

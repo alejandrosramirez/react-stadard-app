@@ -4,12 +4,12 @@ import * as Yup from "yup";
 import { Button, Grid } from "@mantine/core";
 import { IconLock as Lock, IconMail as Mail } from "@tabler/icons-react";
 
-import { authManagerApi } from "@api/authManagerApi";
+import { auth } from "@/api/auth";
 import { FormProvider, RHFPasswordInput, RHFTextInput } from "@core/components/HookForm";
 import { useHandleServerRequest, useLogin } from "@core/hooks";
 import { ILoginParams } from "@interfaces/api/authManagerApi";
 
-const { useLoginMutation } = authManagerApi;
+const { useLoginMutation } = auth;
 
 const LoginForm = () => {
 	const { handleLogin } = useLogin();

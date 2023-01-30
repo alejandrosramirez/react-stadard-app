@@ -2,9 +2,7 @@ import { Controller, useFormContext } from "react-hook-form";
 import { NumberInput } from "@mantine/core";
 import { useFocusWithin } from "@mantine/hooks";
 
-import { IRHFNumberInput } from "@interfaces/core/components/HookForm/RHFNumberInput";
-
-const RHFNumberInput = ({ label, name, ...rest }: IRHFNumberInput) => {
+const RHFNumberInput = ({ label, name, ...rest }: CORE.Components.IRHFNumberInput) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
 

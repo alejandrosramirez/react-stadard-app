@@ -2,9 +2,7 @@ import { Controller, useFormContext } from "react-hook-form";
 import { Checkbox } from "@mantine/core";
 import { useFocusWithin } from "@mantine/hooks";
 
-import { IRHFCheckbox } from "@interfaces/core/components/HookForm/RHFCheckbox";
-
-const RHFCheckbox = ({ label, name, ...rest }: IRHFCheckbox) => {
+const RHFCheckbox = ({ label, name, ...rest }: CORE.Components.IRHFCheckbox) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
 

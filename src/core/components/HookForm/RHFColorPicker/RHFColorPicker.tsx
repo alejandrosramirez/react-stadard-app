@@ -3,9 +3,13 @@ import { ColorPicker, Text } from "@mantine/core";
 import { useFocusWithin } from "@mantine/hooks";
 
 import { defaultSwatches } from "@core/constants";
-import { IRHFColorPicker } from "@interfaces/core/components/HookForm/RHFColorPicker";
 
-const RHFColorPicker = ({ label, name, swatches, ...rest }: IRHFColorPicker) => {
+const RHFColorPicker = ({
+	label,
+	name,
+	swatches,
+	...rest
+}: CORE.Components.IRHFColorPicker) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
 

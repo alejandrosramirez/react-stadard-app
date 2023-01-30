@@ -3,8 +3,6 @@ import { DatePicker } from "@mantine/dates";
 import { useFocusWithin } from "@mantine/hooks";
 import { IconCalendar as Calendar } from "@tabler/icons-react";
 
-import { IRHFDatePicker } from "@interfaces/core/components/HookForm/RHFDatePicker";
-
 const RHFDatePicker = ({
 	label,
 	name,
@@ -12,7 +10,7 @@ const RHFDatePicker = ({
 	locale = "es",
 	format = "DD-MM-YYYY",
 	...rest
-}: IRHFDatePicker) => {
+}: CORE.Components.IRHFDatePicker) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
 

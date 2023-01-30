@@ -2,23 +2,17 @@ import { isEmpty } from "lodash";
 import { stringify } from "qs";
 
 import { buildFormData } from "@helpers";
-import {
-	IDeleteParams,
-	IGetParams,
-	IGetFileParams,
-	IPersistParams,
-} from "@interfaces/api/baseManagerApi";
 import { api } from "./manager";
 
 export const baseManagerApi = api.injectEndpoints({
 	endpoints: (builder) => ({
-		get: builder.query<any, IGetParams>({
+		get: builder.query<any, API.Base.IGetParams>({
 			query: ({ module, params }) =>
 				`${module}${params && !isEmpty(params) ? `?${stringify(params)}` : ""}`,
 
 			providesTags: (result, error, { tags = [] }) => tags,
 		}),
-		persist: builder.mutation<any, IPersistParams>({
+		persist: builder.mutation<any, API.Base.IPersistParams>({
 			query: ({ module, body, method = "POST" }) => ({
 				url: module,
 				method,
@@ -27,7 +21,7 @@ export const baseManagerApi = api.injectEndpoints({
 			invalidatesTags: (result, error, { tags = [] }) => tags,
 			extraOptions: { maxRetries: 0 },
 		}),
-		delete: builder.mutation<any, IDeleteParams>({
+		delete: builder.mutation<any, API.Base.IDeleteParams>({
 			query: ({ module }) => ({
 				url: module,
 				method: "DELETE",
@@ -35,7 +29,7 @@ export const baseManagerApi = api.injectEndpoints({
 			invalidatesTags: (result, error, { tags = [] }) => tags,
 			extraOptions: { maxRetries: 0 },
 		}),
-		getFile: builder.query<any, IGetFileParams>({
+		getFile: builder.query<any, API.Base.IGetFileParams>({
 			query: ({ module, params }) => ({
 				url: module,
 				method: "GET",

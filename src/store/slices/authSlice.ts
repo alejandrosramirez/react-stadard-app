@@ -1,8 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { IAuthSlice } from "@/interfaces/store/slices/authSlice";
-
-const initialState: IAuthSlice = {
+const initialState: STORE.Slices.IAuthSlice = {
 	isLogged: false,
 	token: "",
 	user: undefined,
@@ -16,7 +14,7 @@ export const authSlice = createSlice({
 		setToken: (state, action: PayloadAction<string>) => {
 			state.token = action.payload;
 		},
-		setUser: (state, action: PayloadAction<IAuthSlice>) => {
+		setUser: (state, action: PayloadAction<STORE.Slices.IAuthSlice>) => {
 			state.isLogged = action.payload.isLogged;
 			state.token = action.payload.token;
 			state.user = action.payload.user;

@@ -3,10 +3,9 @@ import { Controller, useFormContext } from "react-hook-form";
 import { Autocomplete } from "@mantine/core";
 import { useFocusWithin } from "@mantine/hooks";
 
-import { baseManagerApi } from "@api/baseManagerApi";
+import { baseManagerApi } from "@api/base";
 import { useDebouncedCallback } from "@core/hooks";
 import { isValidArray } from "@helpers";
-import { IRHFAutocomplete } from "@interfaces/core/components/HookForm/RHFAutocomplete";
 
 const { useLazyGetQuery } = baseManagerApi;
 
@@ -17,7 +16,7 @@ const RHFAutocomplete = ({
 	query = {},
 	buildOptions,
 	...rest
-}: IRHFAutocomplete) => {
+}: CORE.Components.IRHFAutocomplete) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
 

@@ -1,9 +1,7 @@
 import { Center } from "@mantine/core";
 import { IconPhoto as Photo } from "@tabler/icons-react";
 
-import { IFileValue } from "@interfaces/core/components/HookForm/RHFFileInput";
-
-const FileValue = ({ file }: IFileValue) => {
+const FileValue = ({ file }: CORE.Components.IRHFFileInputFileValue) => {
 	return (
 		<Center
 			inline

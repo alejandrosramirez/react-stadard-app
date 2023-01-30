@@ -4,12 +4,13 @@ import { useFocusWithin } from "@mantine/hooks";
 import { IconEye as Eye, IconEyeOff as EyeOff } from "@tabler/icons-react";
 
 import styles from "@core/components/HookForm/styles";
-import {
-	IRHFPasswordInput,
-	IGetVisibilityIcon,
-} from "@interfaces/core/components/HookForm/RHFPasswordInput";
 
-const RHFPasswordInput = ({ label, name, onChange, ...rest }: IRHFPasswordInput) => {
+const RHFPasswordInput = ({
+	label,
+	name,
+	onChange,
+	...rest
+}: CORE.Components.IRHFPasswordInput) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
 
@@ -23,8 +24,12 @@ const RHFPasswordInput = ({ label, name, onChange, ...rest }: IRHFPasswordInput)
 		fieldOnChange(event);
 	};
 
-	const getVisibilityIcon = ({ reveal, size }: IGetVisibilityIcon) =>
-		reveal ? <EyeOff size={size} /> : <Eye size={size} />;
+	const getVisibilityIcon = ({
+		reveal,
+		size,
+	}: CORE.Components.IRHFPasswordInputGetVisibilityIcon) => {
+		return reveal ? <EyeOff size={size} /> : <Eye size={size} />;
+	};
 
 	return (
 		<Controller

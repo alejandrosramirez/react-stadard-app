@@ -1,10 +1,9 @@
 import { Burger, Divider, Header as MantineHeader } from "@mantine/core";
 
 import { Logo, ToggleTheme, UserDropdown } from "@core/components";
-import { IHeader } from "@interfaces/core/components/HeaderTools/Header";
 import styles from "./styles";
 
-const Header = ({ opened, setOpened }: IHeader) => {
+const Header = ({ opened, setOpened }: CORE.Components.IHeader) => {
 	const { classes, theme } = styles();
 
 	return (

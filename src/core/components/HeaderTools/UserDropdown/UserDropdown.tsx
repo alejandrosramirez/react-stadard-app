@@ -3,12 +3,12 @@ import { Group, Menu, Text, UnstyledButton } from "@mantine/core";
 import { IconDoorExit as DoorExit } from "@tabler/icons-react";
 
 import { Avatar } from "@core/components";
-import { ISlice } from "@interfaces/store/slices";
 import styles from "./styles";
 
 const UserDropdown = () => {
 	const { name, lastname, email } = useSelector(
-		(state: ISlice) => state.authSlice.user,
+		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+		(state: STORE.ISlice) => state.authSlice.user!,
 	);
 
 	const { classes } = styles();
