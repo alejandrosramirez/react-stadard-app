@@ -1,8 +1,11 @@
 import { Table } from "@mantine/core";
 
-import { ISimpleTable } from "@interfaces/core/components/SimpleTable";
-
-const SimpleTable = ({ columns, rows, caption, ...rest }: ISimpleTable) => {
+const SimpleTable = ({
+	columns,
+	rows,
+	caption,
+	...rest
+}: CORE.Components.ISimpleTable) => {
 	return (
 		<Table {...rest}>
 			<thead>

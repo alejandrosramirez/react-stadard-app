@@ -2,9 +2,12 @@ import { Controller, useFormContext } from "react-hook-form";
 import { Textarea } from "@mantine/core";
 import { useFocusWithin } from "@mantine/hooks";
 
-import { IRHFTextarea } from "@interfaces/core/components/HookForm/RHFTextarea";
-
-const RHFTextarea = ({ label, name, autosize = false, ...rest }: IRHFTextarea) => {
+const RHFTextarea = ({
+	label,
+	name,
+	autosize = false,
+	...rest
+}: CORE.Components.IRHFTextarea) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
 

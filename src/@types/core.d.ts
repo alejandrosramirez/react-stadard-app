@@ -221,7 +221,7 @@ declare namespace CORE {
 		 * Interface for NavLink component
 		 */
 		export interface INavLink {
-			icon: () => import("@tabler/icons-react").Icon;
+			icon: import("@tabler/icons-react").Icon;
 			label: string;
 			to: string;
 		}
@@ -230,7 +230,7 @@ declare namespace CORE {
 		 * Interface for NavGroupLink component
 		 */
 		export interface INavGroupLink {
-			icon: () => import("@tabler/icons-react").Icon;
+			icon: import("@tabler/icons-react").Icon;
 			label: string;
 			root: string;
 			links: INavLink[];

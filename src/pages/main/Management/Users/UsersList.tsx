@@ -1,4 +1,4 @@
-import { SimpleTable } from "@/core/components";
+import { SimpleTable } from "@core/components";
 
 const UsersList = () => {
 	return (

@@ -1,13 +1,20 @@
+import { Text, Title, Group } from "@mantine/core";
+
 import { Auth, LoginForm } from "@components/auth";
-import { Message } from "@core/components";
 
 const Login = () => {
 	return (
-		<Auth.MainLayout>
-			<Message title="¡Hola!" subtitle="Si soy yo de nuevo" />
+		<Auth.Layout>
+			<Group mb={35}>
+				<Title order={1} align="center" mt="md" mb={30}>
+					¡Bienvenido de Nuevo!
+				</Title>
+
+				<Text>Ingresa tus credenciales para acceder a la plataforma</Text>
+			</Group>
 
 			<LoginForm />
-		</Auth.MainLayout>
+		</Auth.Layout>
 	);
 };
 

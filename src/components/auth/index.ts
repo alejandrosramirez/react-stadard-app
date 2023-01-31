@@ -1,9 +1,7 @@
-import MainLayout from "@components/auth/MainLayout";
-
-import { IAuth } from "@interfaces/components/auth";
+import Layout from "./Layout";
 
 export { default as LoginForm } from "./LoginForm";
 
-export const Auth: IAuth = {
-	MainLayout,
+export const Auth: COMPONENTS.IAuth = {
+	Layout,
 };

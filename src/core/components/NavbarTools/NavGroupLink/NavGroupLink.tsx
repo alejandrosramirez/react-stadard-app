@@ -4,10 +4,14 @@ import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 
 import { useActiveGroup, useActiveLink } from "@core/hooks";
 import { isValidArray } from "@helpers";
-import { INavGroup } from "@interfaces/core/components/NavbarTools/NavGroup";
 import styles from "../styles";
 
-const NavGroup = ({ icon: NavGroupIcon, label, links, root }: INavGroup) => {
+const NavGroupLink = ({
+	icon: NavGroupIcon,
+	label,
+	links,
+	root,
+}: CORE.Components.INavGroupLink) => {
 	const { classes, cx, theme } = styles();
 
 	const { opened, toggle } = useActiveGroup(root);
@@ -61,4 +65,4 @@ const NavGroup = ({ icon: NavGroupIcon, label, links, root }: INavGroup) => {
 	);
 };
 
-export default NavGroup;
+export default NavGroupLink;

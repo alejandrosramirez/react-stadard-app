@@ -2,9 +2,7 @@ import { Controller, useFormContext } from "react-hook-form";
 import { Switch } from "@mantine/core";
 import { useFocusWithin } from "@mantine/hooks";
 
-import { IRHFSwitch } from "@interfaces/core/components/HookForm/RHFSwitch";
-
-const RHFSwitch = ({ label, name, onChange, ...rest }: IRHFSwitch) => {
+const RHFSwitch = ({ label, name, onChange, ...rest }: CORE.Components.IRHFSwitch) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
 

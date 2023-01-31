@@ -5,7 +5,6 @@ export * from "./HookForm";
 export { default as Loader } from "./Loader";
 export { default as LoadingScreen } from "./LoadingScreen";
 export { default as Logo } from "./Logo";
-export { default as Message } from "./Message";
 export * from "./NavbarTools";
 export * from "./RouterTools";
 export { default as SimpleTable } from "./SimpleTable";

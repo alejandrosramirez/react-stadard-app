@@ -2,7 +2,7 @@ import { IconCopyright, IconGauge, IconTools, IconUsers } from "@tabler/icons-re
 
 import { rootPaths } from "./Paths";
 
-const Links: Record<string, any> = [
+const Links: (CORE.Components.INavLink | CORE.Components.INavGroupLink)[] = [
 	{
 		icon: IconGauge,
 		label: "Escritorio",

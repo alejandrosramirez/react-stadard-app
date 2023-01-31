@@ -1,9 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Box, useMantineTheme } from "@mantine/core";
 
-import { IStaticPageLayout } from "@interfaces/core/layouts/StaticPageLayout";
-
-const StaticPageLayout = ({ px = 20, py = 20 }: IStaticPageLayout) => {
+const StaticPageLayout = ({ px = 20, py = 20 }: CORE.Layouts.IStaticPageLayout) => {
 	const theme = useMantineTheme();
 
 	return (

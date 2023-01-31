@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import { setUser } from "@store/slices/authSlice";
+import { setUser, removeUser } from "@store/slices/authSlice";
 
 const useLogin = () => {
 	const dispatch = useDispatch();
@@ -8,8 +8,11 @@ const useLogin = () => {
 	const handleLogin = (user: API.Auth.ILogin) =>
 		dispatch(setUser({ isLogged: true, ...user }));
 
+	const handleLogout = () => dispatch(removeUser());
+
 	return {
 		handleLogin,
+		handleLogout,
 	};
 };
 

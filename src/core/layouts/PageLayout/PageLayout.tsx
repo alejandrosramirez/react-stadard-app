@@ -1,8 +1,6 @@
 import { Box, useMantineTheme } from "@mantine/core";
 
-import { IPageLayout } from "@/interfaces/core/layouts/PageLayout";
-
-const PageLayout = ({ children, px = 20, py = 20 }: IPageLayout) => {
+const PageLayout = ({ children, px = 20, py = 20 }: CORE.Layouts.IPageLayout) => {
 	const theme = useMantineTheme();
 
 	return (

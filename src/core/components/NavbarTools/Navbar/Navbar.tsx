@@ -2,22 +2,19 @@ import { useEffect, useState } from "react";
 import { Navbar as MantineNavbar, ScrollArea, Transition } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
-import { NavGroup, NavLink } from "@core/components";
+import { NavGroupLink, NavLink } from "@core/components";
 import { navbarBaseWidth, navbarSmWidth } from "@core/constants";
-import { INavGroup } from "@interfaces/core/components/NavbarTools/NavGroup";
-import { INavLink } from "@interfaces/core/components/NavbarTools/NavLink";
-import { INavbar } from "@/interfaces/core/components/NavbarTools/Navbar";
-import LinksManager from "@/routes/Links";
+import { Links } from "@routes";
 import styles from "../styles";
 
-const Navbar = ({ opened }: INavbar) => {
+const Navbar = ({ opened }: CORE.Components.INavbar) => {
 	const { classes, theme } = styles();
 
 	const [navbarWidth, setNavbarWidth] = useState(navbarBaseWidth);
 
-	const links: JSX.Element[] = LinksManager.map((link: INavGroup | INavLink) => {
+	const links: JSX.Element[] = Links.map((link) => {
 		if ("links" in link) {
-			return <NavGroup {...link} key={link.label} />;
+			return <NavGroupLink {...link} key={link.label} />;
 		}
 
 		return <NavLink {...link} key={link.label} />;

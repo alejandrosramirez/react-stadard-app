@@ -7,7 +7,7 @@ import { removeUser } from "@store/slices/authSlice";
 const baseQuery = fetchBaseQuery({
 	baseUrl: import.meta.env.VITE_API_URL,
 	prepareHeaders: (headers, { getState }) => {
-		const { token } = getState() as STORE.Slices.IAuthSlice;
+		const { token } = (getState() as STORE.ISlice).authSlice;
 
 		if (token) {
 			headers.set("Authorization", `Bearer ${token}`);

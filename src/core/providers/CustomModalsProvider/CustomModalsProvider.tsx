@@ -1,9 +1,10 @@
 import { useMantineTheme } from "@mantine/core";
 import { ModalsProvider as MantineModalsProvider } from "@mantine/modals";
 
-import { ICustomModalsProvider } from "@interfaces/core/providers/CustomModalsProvider";
-
-const CustomModalsProvider = ({ children, modals }: ICustomModalsProvider) => {
+const CustomModalsProvider = ({
+	children,
+	modals,
+}: CORE.Providers.ICustomModalsProvider) => {
 	const theme = useMantineTheme();
 
 	return (

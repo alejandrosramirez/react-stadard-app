@@ -40,7 +40,7 @@ const styles = createStyles((theme, _, getRef?) => ({
 			backgroundColor:
 				theme.colorScheme === "dark"
 					? theme.fn.rgba(theme.colors.blue[8], 0.15)
-					: `${theme.colors.primary[0]}`,
+					: `${theme.colors.blue[0]}`,
 		},
 	},
 	invalidPassword: {

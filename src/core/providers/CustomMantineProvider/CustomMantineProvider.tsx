@@ -1,9 +1,10 @@
 import { ColorScheme, ColorSchemeProvider, MantineProvider } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
 
-import { ICustomMantineProvider } from "@interfaces/core/providers/CustomMantineProvider";
-
-const CustomMantineProvider = ({ children, theme }: ICustomMantineProvider) => {
+const CustomMantineProvider = ({
+	children,
+	theme,
+}: CORE.Providers.ICustomMantineProvider) => {
 	const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
 		key: "color-scheme",
 		defaultValue: "dark",

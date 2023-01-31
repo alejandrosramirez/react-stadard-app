@@ -20,7 +20,7 @@ const App = () => {
 							<NotificationsProvider
 								limit={5}
 								position="top-right"
-								zIndex={2077}
+								zIndex={9999}
 							>
 								<RouteManager />
 							</NotificationsProvider>

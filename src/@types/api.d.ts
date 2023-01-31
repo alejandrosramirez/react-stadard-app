@@ -23,6 +23,13 @@ declare namespace API {
 			email: string;
 			password: string;
 		}
+
+		/**
+		 * Interface for logout response
+		 */
+		export interface ILogout {
+			logout: boolean	| number;
+		}
 	}
 
 	/**

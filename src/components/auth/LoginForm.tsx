@@ -2,12 +2,11 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { Button, Grid } from "@mantine/core";
-import { IconLock as Lock, IconMail as Mail } from "@tabler/icons-react";
+import { IconLock, IconMail } from "@tabler/icons-react";
 
-import { auth } from "@/api/auth";
+import { auth } from "@api/auth";
 import { FormProvider, RHFPasswordInput, RHFTextInput } from "@core/components/HookForm";
 import { useHandleServerRequest, useLogin } from "@core/hooks";
-import { ILoginParams } from "@interfaces/api/authManagerApi";
 
 const { useLoginMutation } = auth;
 
@@ -20,23 +19,26 @@ const LoginForm = () => {
 	const loginSchema = Yup.object().shape({
 		email: Yup.string()
 			.email("El correo ingresado no es válido")
-			.required("Debes de ingresar un correo electrónico"),
-		password: Yup.string().required("Debes de ingresar una contraseña"),
+			.required("Debes de ingresar un correo electrónico")
+			.typeError("Ingresa un valor"),
+		password: Yup.string()
+			.required("Debes de ingresar una contraseña")
+			.typeError("Ingresa un valor"),
 	});
 
-	const defaultValues: ILoginParams = {
+	const defaultValues: API.Auth.ILoginParams = {
 		email: "",
 		password: "",
 	};
 
-	const formMethods = useForm<ILoginParams>({
+	const formMethods = useForm<API.Auth.ILoginParams>({
 		resolver: yupResolver(loginSchema),
 		defaultValues,
 	});
 
 	const { handleSubmit: submitRHF } = formMethods;
 
-	const handleSubmit = async (data: ILoginParams) => {
+	const handleSubmit = async (data: API.Auth.ILoginParams) => {
 		const user = await submitForm(data).unwrap();
 
 		handleLogin(user);
@@ -47,7 +49,7 @@ const LoginForm = () => {
 		setError,
 	} = formMethods;
 
-	const onSubmit = (data: ILoginParams) =>
+	const onSubmit = (data: API.Auth.ILoginParams) =>
 		handleServerRequest(() => handleSubmit(data), setError);
 
 	return (
@@ -57,8 +59,8 @@ const LoginForm = () => {
 					<RHFTextInput
 						label="Correo electrónico"
 						name="email"
-						placeholder="usuario@empresa.com"
-						icon={<Mail size={14} />}
+						placeholder="usuario@google.com"
+						icon={<IconMail size={14} />}
 					/>
 				</Grid.Col>
 
@@ -67,7 +69,7 @@ const LoginForm = () => {
 						label="Contraseña"
 						name="password"
 						placeholder="•••••••••••••••"
-						icon={<Lock size={14} />}
+						icon={<IconLock size={14} />}
 					/>
 				</Grid.Col>
 

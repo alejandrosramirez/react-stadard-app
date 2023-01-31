@@ -2,10 +2,9 @@ import { useFormContext, Controller } from "react-hook-form";
 import { TextInput } from "@mantine/core";
 import { useFocusWithin } from "@mantine/hooks";
 
-import { IRHFTextInput } from "@interfaces/core/components/HookForm/RHFTextInput";
 import styles from "../styles";
 
-const RHFTextInput = ({ label, name, ...rest }: IRHFTextInput) => {
+const RHFTextInput = ({ label, name, ...rest }: CORE.Components.IRHFTextInput) => {
 	const { control } = useFormContext();
 	const { ref } = useFocusWithin();
 

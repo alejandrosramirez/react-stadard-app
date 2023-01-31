@@ -13,5 +13,12 @@ export const auth = api.injectEndpoints({
 			}),
 			extraOptions: { maxRetries: 0 },
 		}),
+
+		logout: builder.query<API.Auth.ILogout, void>({
+			query: () => ({
+				url: `${name}/logout`,
+			}),
+			extraOptions: { maxRetries: 0 },
+		}),
 	}),
 });

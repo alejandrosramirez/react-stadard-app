@@ -13,14 +13,14 @@ const Home = Loader(lazy(() => import("@pages/main/Home")));
 
 // ** Management
 // Users
-const UsersList = Loader(lazy(() => import("@/pages/main/Management/Users/UsersList")));
-const UsersNew = Loader(lazy(() => import("@/pages/main/Management/Users/UsersNew")));
+const UsersList = Loader(lazy(() => import("@pages/main/Management/Users/UsersList")));
+const UsersNew = Loader(lazy(() => import("@pages/main/Management/Users/UsersNew")));
 const Roles = Loader(lazy(() => import("@pages/main/Management/Roles")));
 
 // ** Error Pages
-const P403 = Loader(lazy(() => import("@/pages/errors/P403")));
-const P404 = Loader(lazy(() => import("@/pages/errors/P404")));
-const P500 = Loader(lazy(() => import("@/pages/errors/P500")));
+const P403 = Loader(lazy(() => import("@pages/errors/P403")));
+const P404 = Loader(lazy(() => import("@pages/errors/P404")));
+const P500 = Loader(lazy(() => import("@pages/errors/P500")));
 
 const RouteManager = () => {
 	return useRoutes([
@@ -30,7 +30,7 @@ const RouteManager = () => {
 		},
 		{
 			path: "auth",
-			element: <PublicRoute component={StaticPageLayout} />,
+			element: <PublicRoute component={() => <StaticPageLayout px={0} py={0} />} />,
 			children: [
 				{
 					index: true,
@@ -44,11 +44,11 @@ const RouteManager = () => {
 		},
 		{
 			path: "home",
-			element: <PrivateRoute component={Home} />,
+			element: <PrivateRoute component={() => <Home />} />,
 		},
 		{
 			path: "management",
-			element: <PrivateRoute component={StaticPageLayout} />,
+			element: <PrivateRoute component={() => <StaticPageLayout />} />,
 			children: [
 				{
 					index: true,
