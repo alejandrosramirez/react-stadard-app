@@ -28,7 +28,7 @@ declare namespace API {
 		 * Interface for logout response
 		 */
 		export interface ILogout {
-			logout: boolean	| number;
+			logout: boolean | number;
 		}
 	}
 
@@ -60,5 +60,12 @@ declare namespace API {
 				name: string;
 			};
 		}
+	}
+
+	/**
+	 * This namespace is for users api
+	 */
+	namespace Users {
+		export interface IGetUsersQuery {}
 	}
 }

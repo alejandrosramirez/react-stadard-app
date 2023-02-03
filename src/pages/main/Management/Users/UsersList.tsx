@@ -1,13 +1,28 @@
 import { useMemo } from "react";
 import { MRT_ColumnDef } from "mantine-react-table";
+import { Avatar, Box, Button, Flex, Group, Text, Title } from "@mantine/core";
+import { IconUserPlus } from "@tabler/icons-react";
 
+import { users as usersApi } from "@api/users";
 import { SimpleTable } from "@core/components";
 
+const { useIndexQuery } = usersApi;
+
 const UsersList = () => {
+	const getQuery =
+		(params: API.Users.IGetUsersQuery) =>
+		(page: number, search: string, size?: number) =>
+			useIndexQuery({ page, search, size, ...params });
+
 	const cols = useMemo<MRT_ColumnDef<GENERAL.Models.IUser>[]>(
 		() => [
 			{
-				accessorFn: (row) => `${row.name} ${row.lastname}`,
+				accessorFn: (row) => (
+					<Group>
+						<Avatar src={row.avatar} radius="xl" alt="User avatar" />
+						<Text weight={600}>{`${row.name} ${row.lastname}`}</Text>
+					</Group>
+				),
 				id: "name",
 				header: "Nombre",
 			},
@@ -25,26 +40,26 @@ const UsersList = () => {
 		[],
 	);
 
-	const rows: Partial<GENERAL.Models.IUser>[] = [
-		{
-			id: 1,
-			uuid: "3f40a239-cffa-4e09-af4d-882b31f64f77",
-			name: "Alejandro",
-			lastname: "Salgado",
-			email: "alejandrosram@outlook.com",
-			phone: "3330204397",
-		},
-		{
-			id: 2,
-			uuid: "ae6c2d64-ceab-4d0d-ae42-8ab679b65107",
-			name: "Luis",
-			lastname: "Gonzalez",
-			email: "luisglez@outlook.com",
-			phone: "3330204397",
-		},
-	];
+	return (
+		<Box>
+			<Flex
+				gap="md"
+				justify="space-between"
+				align="center"
+				direction="row"
+				wrap="wrap"
+				mb={25}
+			>
+				<Title order={1}>Usuarios</Title>
 
-	return <SimpleTable cols={cols} rows={rows} />;
+				<Button variant="outline" leftIcon={<IconUserPlus size={16} />}>
+					Agregar nuevo usuario
+				</Button>
+			</Flex>
+
+			<SimpleTable cols={cols} getQueryFn={getQuery({})} />
+		</Box>
+	);
 };
 
 export default UsersList;

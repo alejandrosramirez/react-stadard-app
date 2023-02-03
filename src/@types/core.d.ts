@@ -251,7 +251,7 @@ declare namespace CORE {
 		 */
 		export interface ISimpleTable extends Partial<import("mantine-react-table").MantineReactTableProps> {
 			cols: any[];
-			rows: any[];
+			getQueryFn: (page: number, search: string, size?: number) => any;
 		}
 	}
 
