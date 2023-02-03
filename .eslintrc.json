@@ -39,7 +39,7 @@
 				"useTabs": true
 			}
 		],
-		"camelcase": "error",
+		"camelcase": "off",
 		"no-const-assign": "error",
 		"no-duplicate-imports": "error",
 		"no-empty": "error",

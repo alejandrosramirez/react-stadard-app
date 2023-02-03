@@ -249,14 +249,9 @@ declare namespace CORE {
 		/**
 		 * Interface for SimpleTable component
 		 */
-		export interface ISimpleTable
-			extends Partial<import("@mantine/core").TableProps> {
-			columns: {
-				title: string | JSX.Element | React.ReactNode;
-				align: "left" | "center" | "right" | "justify" | "char" | undefined;
-			}[];
-			rows: (JSX.Element | React.ReactNode)[];
-			caption?: string | JSX.Element | React.ReactNode;
+		export interface ISimpleTable extends Partial<import("mantine-react-table").MantineReactTableProps> {
+			cols: any[];
+			rows: any[];
 		}
 	}
 
