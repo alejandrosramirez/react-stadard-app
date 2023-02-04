@@ -57,9 +57,17 @@ const SimpleTable = ({ cols, getQueryFn }: CORE.Components.ISimpleTable) => {
 				showProgressBars: isFetching,
 				sorting,
 			}}
+			mantinePaperProps={{
+				shadow: "none",
+				sx: {
+					borderRadius: "0",
+					border: "2px dashed #e0e0e0",
+				},
+			}}
 			mantineTableProps={{
 				fontSize: "md",
 				highlightOnHover: false,
+				striped: true,
 				withColumnBorders: false,
 				withBorder: false,
 			}}
@@ -84,8 +92,11 @@ const SimpleTable = ({ cols, getQueryFn }: CORE.Components.ISimpleTable) => {
 			}}
 			mantineTableHeadCellProps={{
 				sx: {
-					"& .Mantine-TableHeadCell-Content": {
+					"& .Mui-TableHeadCell-Content": {
 						justifyContent: "space-between",
+						"& .Mui-TableHeadCell-Content-Labels": {
+							gap: 10,
+						},
 					},
 				},
 			}}
