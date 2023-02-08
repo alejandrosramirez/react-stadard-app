@@ -23,18 +23,19 @@ const UsersList = () => {
 						<Text weight={600}>{`${row.name} ${row.lastname}`}</Text>
 					</Group>
 				),
-				id: "name",
 				header: "Nombre",
+				id: "name",
+				enableHiding: false,
 			},
 			{
 				accessorKey: "email",
-				id: "email",
 				header: "Correo Electrónico",
+				id: "email",
 			},
 			{
 				accessorKey: "phone",
-				id: "phone",
 				header: "Teléfono",
+				id: "phone",
 			},
 		],
 		[],

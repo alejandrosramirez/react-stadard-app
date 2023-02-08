@@ -5,7 +5,7 @@ import { PaginationState, SortingState } from "@tanstack/react-table";
 
 const SimpleTable = ({ cols, getQueryFn }: CORE.Components.ISimpleTable) => {
 	// SimpleTable States
-	const [globalFilter, setGlobalFilter] = useState("");
+	const [globalFilter, setGlobalFilter] = useState<string>("");
 	const [sorting, setSorting] = useState<SortingState>([]);
 	const [pagination, setPagination] = useState<PaginationState>({
 		pageIndex: 0,
@@ -74,7 +74,7 @@ const SimpleTable = ({ cols, getQueryFn }: CORE.Components.ISimpleTable) => {
 			mantineSearchTextInputProps={{
 				sx: { minWidth: "600px" },
 				variant: "filled",
-				size: "md",
+				size: "sm",
 			}}
 			mantineFilterTextInputProps={{
 				sx: { borderBottom: "unset", marginTop: "8px" },
@@ -92,9 +92,9 @@ const SimpleTable = ({ cols, getQueryFn }: CORE.Components.ISimpleTable) => {
 			}}
 			mantineTableHeadCellProps={{
 				sx: {
-					"& .Mui-TableHeadCell-Content": {
+					"& .mantine-TableHeadCell-Content": {
 						justifyContent: "space-between",
-						"& .Mui-TableHeadCell-Content-Labels": {
+						"& .mantine-TableHeadCell-Content-Labels": {
 							gap: 10,
 						},
 					},

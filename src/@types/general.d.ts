@@ -132,6 +132,8 @@ declare namespace GENERAL {
 			trial_ends_at: string | null;
 			addresses?: Array<IAddress> | null;
 			addresses_count?: number | null;
+			roles?: Array<IRole> | null;
+			roles_count?: number | null;
 		}
 	}
 
