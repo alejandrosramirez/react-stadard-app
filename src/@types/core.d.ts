@@ -38,7 +38,7 @@ declare namespace CORE {
 		 */
 		export interface IFormProvider
 			extends Partial<import("react-hook-form").FormProviderProps> {
-			children: React.ReactNode | React.ReactNode[];
+			children: React.ReactNode | Array<React.ReactNode>;
 			onSubmit: () => void;
 			methods: import("react-hook-form").UseFormReturn<any, any>;
 		}
@@ -56,7 +56,7 @@ declare namespace CORE {
 			labelKey?: string;
 			valueKey?: string;
 			callback: (value: any) => void;
-			buildOptions: (data: any[]) => any[];
+			buildOptions: (data: Array<any>) => Array<any>;
 		}
 
 		/**
@@ -138,7 +138,7 @@ declare namespace CORE {
 			label?: string;
 			name: string;
 			clearable?: boolean;
-			data: string[] | SelectItem[];
+			data: Array<string | SelectItem>;
 		}
 
 		/**
@@ -176,7 +176,7 @@ declare namespace CORE {
 			label?: string;
 			name: string;
 			clearable?: boolean;
-			data: string[] | SelectItem[];
+			data: Array<string | SelectItem>;
 		}
 
 		/**
@@ -233,7 +233,7 @@ declare namespace CORE {
 			icon: import("@tabler/icons-react").Icon;
 			label: string;
 			root: string;
-			links: INavLink[];
+			links: Array<INavLink>;
 		}
 
 		/**
@@ -250,7 +250,7 @@ declare namespace CORE {
 		 * Interface for SimpleTable component
 		 */
 		export interface ISimpleTable extends Partial<import("mantine-react-table").MantineReactTableProps> {
-			cols: any[];
+			cols: Array<any>;
 			getQueryFn: (page: number, search: string, size?: number) => any;
 		}
 	}
@@ -286,14 +286,14 @@ declare namespace CORE {
 		 */
 		export interface ICustomMantineProvider
 			extends Partial<import("@mantine/core").MantineProviderProps> {
-			children: ReactElement | ReactElement[];
+			children: ReactElement | Array<ReactElement>;
 		}
 
 		/**
 		 * Interface for CustomModalsProvider component
 		 */
 		export interface ICustomModalsProvider {
-			children: React.ReactNode | React.ReactNode[];
+			children: React.ReactNode | Array<React.ReactNode>;
 			modals: Record<string, any>;
 		}
 	}

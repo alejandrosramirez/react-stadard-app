@@ -12,7 +12,7 @@ declare namespace COMPONENTS {
 		 * Interface for Layout component
 		 */
 		export interface ILayout {
-			children: React.ReactElement | React.ReactElement[];
+			children: React.ReactElement | Array<React.ReactElement>;
 		}
 	}
 
@@ -20,6 +20,6 @@ declare namespace COMPONENTS {
 	 * Interface for auth components folder
 	 */
 	export interface IAuth {
-		Layout: (Props: Auth.ILayout) => JSX.Element;
+		Layout: (props: Auth.ILayout) => JSX.Element;
 	}
 }

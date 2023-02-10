@@ -39,19 +39,19 @@ declare namespace API {
 		export interface IGetParams {
 			module: string;
 			params?: Record<string, any>;
-			tags?: any[];
+			tags?: Array<any>;
 		}
 
 		export interface IPersistParams {
 			module: string;
 			body: any;
 			method: "POST" | "PUT";
-			tags?: any[];
+			tags?: Array<any>;
 		}
 
 		export interface IDeleteParams {
 			module: string;
-			tags?: any[];
+			tags?: Array<any>;
 		}
 
 		export interface IGetFileParams {

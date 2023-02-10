@@ -142,16 +142,16 @@ declare namespace GENERAL {
 	 */
 	export interface IPaginate<T> {
 		current_page: number;
-		data: T[];
+		data: Array<T>;
 		first_page_url: string;
 		from: null;
 		last_page: number;
 		last_page_url: string;
-		links: {
+		links: Array<{
 			url: null | string;
 			label: string;
 			active: boolean;
-		}[];
+		}>;
 		next_page_url: null;
 		path: string;
 		per_page: number;
