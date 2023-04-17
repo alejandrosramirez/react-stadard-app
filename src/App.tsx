@@ -2,7 +2,7 @@ import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
 
-import { NotificationsProvider } from "@mantine/notifications";
+import { Notifications } from "@mantine/notifications";
 
 import { CustomMantineProvider, CustomModalsProvider } from "@core/providers";
 import { RouteManager } from "@routes";
@@ -17,13 +17,8 @@ const App = () => {
 				<PersistGate persistor={persistor}>
 					<CustomMantineProvider theme={theme}>
 						<CustomModalsProvider modals={modals}>
-							<NotificationsProvider
-								limit={5}
-								position="top-right"
-								zIndex={9999}
-							>
-								<RouteManager />
-							</NotificationsProvider>
+							<Notifications position="top-right" zIndex={9999} />
+							<RouteManager />
 						</CustomModalsProvider>
 					</CustomMantineProvider>
 				</PersistGate>
