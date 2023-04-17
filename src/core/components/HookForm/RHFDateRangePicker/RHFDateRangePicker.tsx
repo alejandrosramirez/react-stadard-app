@@ -1,5 +1,5 @@
 import { Controller, useFormContext } from "react-hook-form";
-import { DateRangePicker } from "@mantine/dates";
+import { DatePicker } from "@mantine/dates";
 import { useFocusWithin } from "@mantine/hooks";
 import { IconCalendar as Calendar } from "@tabler/icons-react";
 
@@ -19,11 +19,12 @@ const RHFDateRangePicker = ({
 			name={name}
 			control={control}
 			render={({ field, fieldState: { error } }) => (
-				<DateRangePicker
+				<DatePicker
 					{...field}
 					{...rest}
 					id={name}
 					ref={ref}
+					type="range"
 					label={error?.message ? error.message : label}
 					error={!!error}
 					placeholder={placeholder}
