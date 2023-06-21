@@ -8,9 +8,7 @@ const styles = createStyles((theme) => {
 		},
 
 		form: {
-			borderRight: `1px solid ${
-				theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[3]
-			}`,
+			borderRight: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[3]}`,
 			minHeight: "100vh",
 			maxWidth: 450,
 			paddingTop: 80,

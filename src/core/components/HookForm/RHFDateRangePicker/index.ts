@@ -1,1 +1,1 @@
-export { default } from "./RHFDateRangePicker";
+export { default } from "./RHFDateRangeInputPicker";

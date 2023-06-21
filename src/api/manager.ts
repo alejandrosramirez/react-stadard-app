@@ -17,11 +17,7 @@ const baseQuery = fetchBaseQuery({
 	},
 });
 
-const baseQueryWithReAuth = async (
-	args: FetchArgs | string,
-	api: BaseQueryApi,
-	options: Record<string, any> = {},
-) => {
+const baseQueryWithReAuth = async (args: FetchArgs | string, api: BaseQueryApi, options: Record<string, any> = {}) => {
 	const result = await baseQuery(args, api, options);
 
 	if (result.error && result.error.status === 401) {

@@ -7,8 +7,7 @@ import { api } from "./manager";
 export const baseManagerApi = api.injectEndpoints({
 	endpoints: (builder) => ({
 		get: builder.query<any, API.Base.IGetParams>({
-			query: ({ module, params }) =>
-				`${module}${params && !isEmpty(params) ? `?${stringify(params)}` : ""}`,
+			query: ({ module, params }) => `${module}${params && !isEmpty(params) ? `?${stringify(params)}` : ""}`,
 
 			providesTags: (result, error, { tags = [] }) => tags,
 		}),
@@ -37,9 +36,7 @@ export const baseManagerApi = api.injectEndpoints({
 					const blobUrl = window.URL.createObjectURL(await blob());
 					const aTag = document.createElement("a");
 					aTag.href = blobUrl;
-					aTag.download = `${params.name ?? "doc"}${blobUrl.substring(
-						blobUrl.lastIndexOf("/") + 1,
-					)}`;
+					aTag.download = `${params.name ?? "doc"}${blobUrl.substring(blobUrl.lastIndexOf("/") + 1)}`;
 					document.body.appendChild(aTag);
 					aTag.click();
 					document.body.removeChild(aTag);

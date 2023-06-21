@@ -1,10 +1,8 @@
 import { Controller, useFormContext } from "react-hook-form";
 import { Switch } from "@mantine/core";
-import { useFocusWithin } from "@mantine/hooks";
 
 const RHFSwitch = ({ label, name, onChange, ...rest }: CORE.Components.IRHFSwitch) => {
 	const { control } = useFormContext();
-	const { ref } = useFocusWithin();
 
 	const handleOnChange = (fieldOnChange: (value: any) => void) => (event: any) => {
 		if (typeof onChange === "function") {
@@ -21,13 +19,12 @@ const RHFSwitch = ({ label, name, onChange, ...rest }: CORE.Components.IRHFSwitc
 			render={({ field, fieldState: { error } }) => (
 				<Switch
 					{...field}
-					{...rest}
 					id={name}
-					ref={ref}
-					label={error?.message ? error.message : label}
-					error={!!error}
+					label={label}
+					error={error?.message}
 					checked={field.value}
 					onChange={handleOnChange(field.onChange)}
+					{...rest}
 				/>
 			)}
 		/>

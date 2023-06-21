@@ -1,40 +1,37 @@
 import { Controller, useFormContext } from "react-hook-form";
-import { DatePicker } from "@mantine/dates";
-import { useFocusWithin } from "@mantine/hooks";
+import { DatePickerInput } from "@mantine/dates";
 import { IconCalendar as Calendar } from "@tabler/icons-react";
 
-const RHFDateRangePicker = ({
+const RHFDateRangeInputPicker = ({
 	label,
 	name,
 	placeholder = "Seleccionar...",
 	locale = "es",
 	format = "DD-MM-YYYY",
 	...rest
-}: CORE.Components.IRHFDateRangePicker) => {
+}: CORE.Components.IRHFDateRangeInputPicker) => {
 	const { control } = useFormContext();
-	const { ref } = useFocusWithin();
 
 	return (
 		<Controller
 			name={name}
 			control={control}
 			render={({ field, fieldState: { error } }) => (
-				<DatePicker
+				<DatePickerInput
 					{...field}
-					{...rest}
 					id={name}
-					ref={ref}
-					type="range"
-					label={error?.message ? error.message : label}
-					error={!!error}
+					label={label}
+					error={error?.message}
 					placeholder={placeholder}
 					locale={locale}
-					inputFormat={format}
+					valueFormat={format}
 					icon={<Calendar size={16} />}
+					type="range"
+					{...rest}
 				/>
 			)}
 		/>
 	);
 };
 
-export default RHFDateRangePicker;
+export default RHFDateRangeInputPicker;

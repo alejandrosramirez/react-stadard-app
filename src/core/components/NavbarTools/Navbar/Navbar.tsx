@@ -35,12 +35,7 @@ const Navbar = ({ opened }: CORE.Components.INavbar) => {
 	}, [maxWidthSm, minWidthSm]);
 
 	return (
-		<Transition
-			mounted={navbarBaseWidth === navbarWidth}
-			transition="scale-x"
-			duration={400}
-			timingFunction="ease"
-		>
+		<Transition mounted={navbarBaseWidth === navbarWidth} transition="scale-x" duration={400} timingFunction="ease">
 			{(styles) => (
 				<MantineNavbar
 					p="md"
@@ -64,11 +59,7 @@ const Navbar = ({ opened }: CORE.Components.INavbar) => {
 					}}
 					className={classes.navbar}
 				>
-					<MantineNavbar.Section
-						grow
-						component={ScrollArea}
-						className={classes.links}
-					>
+					<MantineNavbar.Section grow component={ScrollArea} className={classes.links}>
 						<div className={classes.linksInner}>{links}</div>
 					</MantineNavbar.Section>
 				</MantineNavbar>

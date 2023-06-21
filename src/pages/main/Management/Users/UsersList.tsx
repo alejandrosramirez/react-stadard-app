@@ -9,10 +9,8 @@ import { SimpleTable } from "@core/components";
 const { useIndexQuery } = usersApi;
 
 const UsersList = () => {
-	const getQuery =
-		(params: API.Users.IGetUsersQuery) =>
-		(page: number, search: string, size?: number) =>
-			useIndexQuery({ page, search, size, ...params });
+	const getQuery = (params: API.Users.IGetUsersQuery) => (page: number, search: string, size?: number) =>
+		useIndexQuery({ page, search, size, ...params });
 
 	const cols = useMemo<MRT_ColumnDef<GENERAL.Models.IUser>[]>(
 		() => [
@@ -43,14 +41,7 @@ const UsersList = () => {
 
 	return (
 		<Box>
-			<Flex
-				gap="md"
-				justify="space-between"
-				align="center"
-				direction="row"
-				wrap="wrap"
-				mb={25}
-			>
+			<Flex gap="md" justify="space-between" align="center" direction="row" wrap="wrap" mb={25}>
 				<Title order={1}>Usuarios</Title>
 
 				<Button variant="outline" leftIcon={<IconUserPlus size={16} />}>

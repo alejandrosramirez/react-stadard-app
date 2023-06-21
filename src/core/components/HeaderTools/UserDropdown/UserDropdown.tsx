@@ -23,9 +23,9 @@ const UserDropdown = () => {
 	const { classes } = styles();
 
 	const handleSubmit = async () => {
-		const response = await submitLogout().unwrap();
+		const { logout } = await submitLogout().unwrap();
 
-		if (response.logout || response.logout > 0) {
+		if (logout) {
 			handleLogout();
 		}
 	};
@@ -36,7 +36,9 @@ const UserDropdown = () => {
 		<Group position="center">
 			<Menu
 				position="bottom"
-				transition="pop"
+				transitionProps={{
+					transition: "pop",
+				}}
 				withArrow
 				arrowPosition="center"
 				classNames={{ dropdown: classes.dropdown }}
@@ -44,12 +46,7 @@ const UserDropdown = () => {
 				<Menu.Target>
 					<UnstyledButton>
 						<Group>
-							<Avatar
-								color="blue"
-								radius="xl"
-								size={40}
-								name={`${name} ${lastname}`}
-							/>
+							<Avatar color="blue" radius="xl" size={40} name={`${name} ${lastname}`} />
 
 							<div className={classes.userInfoContainer}>
 								<Text weight={600} size={12} mr={3}>

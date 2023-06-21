@@ -164,19 +164,18 @@ declare namespace GENERAL {
 	 * Interface for (Private/Public)Route components
 	 */
 	export interface IRoute {
-		component: (
-			props: any,
-		) => React.ReactElement<any, string | React.JSXElementConstructor<any>> | null;
+		component: (props: any) => React.ReactElement<any, string | React.JSXElementConstructor<any>> | null;
 	}
 
 	/**
 	 * Interface for server error
 	 */
 	export interface IServerError {
-		data: {
+		data : {
+			code: number;
 			error: string;
 			message: string | Record<string, any>;
-			status: number;
 		};
+		status: number;
 	}
 }

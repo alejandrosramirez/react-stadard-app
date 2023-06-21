@@ -3,7 +3,7 @@ export { default as RHFAutocomplete } from "./RHFAutocomplete";
 export { default as RHFCheckbox } from "./RHFCheckbox";
 export { default as RHFColorInput } from "./RHFColorInput";
 export { default as RHFColorPicker } from "./RHFColorPicker";
-export { default as RHFDatePicker } from "./RHFDatePicker";
+export { default as RHFDatePickerInput } from "./RHFDatePickerInput";
 export { default as RHFDateRangePicker } from "./RHFDateRangePicker";
 export { default as RHFFileInput } from "./RHFFileInput";
 export { default as RHFMultiSelect } from "./RHFMultiSelect";

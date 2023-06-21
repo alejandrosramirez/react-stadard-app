@@ -17,14 +17,8 @@ const AppShell = ({ children }: CORE.Components.IAppShell) => {
 			navbar={<Navbar opened={opened} />}
 			styles={{
 				main: {
-					background:
-						theme.colorScheme === "dark"
-							? theme.colors.dark[8]
-							: theme.colors.gray[1],
-					borderColor:
-						theme.colorScheme === "dark"
-							? theme.colors.dark[4]
-							: theme.colors.gray[3],
+					background: theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.colors.gray[1],
+					borderColor: theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3],
 				},
 			}}
 		>

@@ -12,11 +12,7 @@ const SimpleTable = ({ cols, getQueryFn }: CORE.Components.ISimpleTable) => {
 		pageSize: 25,
 	});
 
-	const { data, isLoading, isError, isFetching } = getQueryFn(
-		pagination.pageIndex + 1,
-		globalFilter,
-		pagination.pageSize,
-	);
+	const { data, isLoading, isError, isFetching } = getQueryFn(pagination.pageIndex + 1, globalFilter, pagination.pageSize);
 
 	return (
 		<Table

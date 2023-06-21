@@ -28,7 +28,7 @@ declare namespace API {
 		 * Interface for logout response
 		 */
 		export interface ILogout {
-			logout: boolean | number;
+			logout: boolean;
 		}
 	}
 

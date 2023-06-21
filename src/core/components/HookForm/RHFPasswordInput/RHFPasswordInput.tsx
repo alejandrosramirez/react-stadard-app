@@ -1,18 +1,11 @@
 import { Controller, useFormContext } from "react-hook-form";
 import { PasswordInput } from "@mantine/core";
-import { useFocusWithin } from "@mantine/hooks";
 import { IconEye as Eye, IconEyeOff as EyeOff } from "@tabler/icons-react";
 
 import styles from "@core/components/HookForm/styles";
 
-const RHFPasswordInput = ({
-	label,
-	name,
-	onChange,
-	...rest
-}: CORE.Components.IRHFPasswordInput) => {
+const RHFPasswordInput = ({ label, name, onChange, ...rest }: CORE.Components.IRHFPasswordInput) => {
 	const { control } = useFormContext();
-	const { ref } = useFocusWithin();
 
 	const { classes } = styles();
 
@@ -24,13 +17,6 @@ const RHFPasswordInput = ({
 		fieldOnChange(event);
 	};
 
-	const getVisibilityIcon = ({
-		reveal,
-		size,
-	}: CORE.Components.IRHFPasswordInputGetVisibilityIcon) => {
-		return reveal ? <EyeOff size={size} /> : <Eye size={size} />;
-	};
-
 	return (
 		<Controller
 			name={name}
@@ -38,20 +24,19 @@ const RHFPasswordInput = ({
 			render={({ field, fieldState: { error } }) => (
 				<PasswordInput
 					{...field}
-					{...rest}
 					id={name}
-					ref={ref}
-					label={error?.message ? error.message : label}
-					error={!!error}
-					visibilityToggleIcon={getVisibilityIcon}
+					label={label}
+					error={error?.message}
+					visibilityToggleIcon={({ reveal, size }) => (reveal ? <EyeOff size={size} /> : <Eye size={size} />)}
 					onChange={handleOnChange(field.onChange)}
 					autoComplete="off"
 					classNames={{
 						innerInput: classes.innerInput,
-						invalid: classes.invalidPassword,
+						// invalid: classes.invalidPassword,
 						input: classes.inputPassword,
 						label: `${classes.label} ${error && classes.labelError}`,
 					}}
+					{...rest}
 				/>
 			)}
 		/>

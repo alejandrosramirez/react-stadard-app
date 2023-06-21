@@ -1,9 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const useDebouncedCallback = <A extends any[]>(
-	callback: (...args: A) => void,
-	delay: number,
-) => {
+const useDebouncedCallback = <A extends any[]>(callback: (...args: A) => void, delay: number) => {
 	const argsRef = useRef<A>();
 	const timeout = useRef<ReturnType<typeof setTimeout>>();
 

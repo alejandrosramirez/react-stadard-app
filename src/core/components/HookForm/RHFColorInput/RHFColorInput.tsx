@@ -1,17 +1,10 @@
 import { Controller, useFormContext } from "react-hook-form";
 import { ColorInput } from "@mantine/core";
-import { useFocusWithin } from "@mantine/hooks";
 
 import { defaultSwatches } from "@core/constants";
 
-const RHFColorInput = ({
-	label,
-	name,
-	swatches,
-	...rest
-}: CORE.Components.IRHFColorInput) => {
+const RHFColorInput = ({ label, name, swatches, ...rest }: CORE.Components.IRHFColorInput) => {
 	const { control } = useFormContext();
-	const { ref } = useFocusWithin();
 
 	return (
 		<Controller
@@ -20,14 +13,13 @@ const RHFColorInput = ({
 			render={({ field, fieldState: { error } }) => (
 				<ColorInput
 					{...field}
-					{...rest}
 					id={name}
-					ref={ref}
-					label={error?.message ? error.message : label}
-					error={!!error}
+					label={label}
+					error={error?.message}
 					swatches={swatches ?? defaultSwatches}
 					disallowInput
 					withPicker={false}
+					{...rest}
 				/>
 			)}
 		/>

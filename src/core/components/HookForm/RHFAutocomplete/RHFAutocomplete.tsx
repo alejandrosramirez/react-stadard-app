@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { Autocomplete } from "@mantine/core";
-import { useFocusWithin } from "@mantine/hooks";
 
 import { baseManagerApi } from "@api/base";
 import { useDebouncedCallback } from "@core/hooks";
@@ -9,16 +8,8 @@ import { isValidArray } from "@helpers";
 
 const { useLazyGetQuery } = baseManagerApi;
 
-const RHFAutocomplete = ({
-	label,
-	name,
-	param,
-	query = {},
-	buildOptions,
-	...rest
-}: CORE.Components.IRHFAutocomplete) => {
+const RHFAutocomplete = ({ label, name, param, query = {}, buildOptions, ...rest }: CORE.Components.IRHFAutocomplete) => {
 	const { control } = useFormContext();
-	const { ref } = useFocusWithin();
 
 	const [fetch] = useLazyGetQuery();
 
@@ -45,16 +36,15 @@ const RHFAutocomplete = ({
 			render={({ field, fieldState: { error } }) => (
 				<Autocomplete
 					{...field}
-					{...rest}
 					id={name}
-					ref={ref}
-					label={error?.message ? error.message : label}
-					error={!!error}
+					label={label}
+					error={error?.message}
 					data={data}
 					onChange={(value) => {
 						handleSearch(value);
 						field.onChange(value);
 					}}
+					{...rest}
 				/>
 			)}
 		/>

@@ -36,8 +36,7 @@ declare namespace CORE {
 		/**
 		 * Interface for FormProvider component
 		 */
-		export interface IFormProvider
-			extends Partial<import("react-hook-form").FormProviderProps> {
+		export interface IFormProvider extends Partial<import("react-hook-form").FormProviderProps> {
 			children: React.ReactNode | Array<React.ReactNode>;
 			onSubmit: () => void;
 			methods: import("react-hook-form").UseFormReturn<any, any>;
@@ -46,9 +45,7 @@ declare namespace CORE {
 		/**
 		 * Interface for RHFAutocomplete component
 		 */
-		export interface IRHFAutocomplete
-			extends Partial<import("@mantine/core").AutocompleteProps>,
-				React.RefAttributes<HTMLInputElement> {
+		export interface IRHFAutocomplete extends Partial<import("@mantine/core").AutocompleteProps>, React.RefAttributes<HTMLInputElement> {
 			label?: string;
 			name: string;
 			param: string;
@@ -62,9 +59,7 @@ declare namespace CORE {
 		/**
 		 * Interface for RHFCheckbox component
 		 */
-		export interface IRHFCheckbox
-			extends Partial<import("@mantine/core").CheckboxProps>,
-				RefAttributes<HTMLInputElement> {
+		export interface IRHFCheckbox extends Partial<import("@mantine/core").CheckboxProps>, RefAttributes<HTMLInputElement> {
 			label?: string;
 			name: string;
 		}
@@ -72,9 +67,7 @@ declare namespace CORE {
 		/**
 		 * Interface for RHFColorInput component
 		 */
-		export interface IRHFColorInput
-			extends Partial<import("@mantine/core").ColorInputProps>,
-				React.RefAttributes<HTMLInputElement> {
+		export interface IRHFColorInput extends Partial<import("@mantine/core").ColorInputProps>, React.RefAttributes<HTMLInputElement> {
 			label?: string;
 			name: string;
 		}
@@ -82,9 +75,7 @@ declare namespace CORE {
 		/**
 		 * Interface for RHFColorPicker component
 		 */
-		export interface IRHFColorPicker
-			extends Partial<import("@mantine/core").ColorPickerProps>,
-				React.RefAttributes<HTMLDivElement> {
+		export interface IRHFColorPicker extends Partial<import("@mantine/core").ColorPickerProps>, React.RefAttributes<HTMLDivElement> {
 			label?: string;
 			name: string;
 		}
@@ -92,9 +83,7 @@ declare namespace CORE {
 		/**
 		 * Interface for RHFDatePicker component
 		 */
-		export interface IRHFDatePicker
-			extends Partial<import("@mantine/dates").DatePickerProps>,
-				React.RefAttributes<HTMLInputElement> {
+		export interface IRHFDatePickerInput extends Partial<import("@mantine/dates").DatePickerInputProps>, React.RefAttributes<HTMLInputElement> {
 			label?: string;
 			name: string;
 			placeholder: string;
@@ -105,8 +94,8 @@ declare namespace CORE {
 		/**
 		 * Interface for RHFDateRangePicker component
 		 */
-		export interface IRHFDateRangePicker
-			extends Partial<import("@mantine/dates").DateRangePickerProps>,
+		export interface IRHFDateRangeInputPicker
+			extends Partial<import("@mantine/dates").DatePickerInputProps>,
 				React.RefAttributes<HTMLInputElement> {
 			label?: string;
 			name: string;
@@ -122,9 +111,11 @@ declare namespace CORE {
 			file: File;
 		}
 
-		export interface IRHFFileInput
-			extends Partial<import("@mantine/core").FileInputProps>,
-				React.RefAttributes<HTMLInputElement> {
+		export interface IRHFFileInputValueComponent {
+			value: null | File | File[];
+		}
+
+		export interface IRHFFileInput extends Partial<import("@mantine/core").FileInputProps>, React.RefAttributes<HTMLButtonElement> {
 			label?: string;
 			name: string;
 		}
@@ -132,9 +123,7 @@ declare namespace CORE {
 		/**
 		 * Interface for RHFMultiSelect component
 		 */
-		export interface IRHFMultiSelect
-			extends Partial<import("@mantine/core").MultiSelectProps>,
-				React.RefAttributes<HTMLInputElement> {
+		export interface IRHFMultiSelect extends Partial<import("@mantine/core").MultiSelectProps>, React.RefAttributes<HTMLInputElement> {
 			label?: string;
 			name: string;
 			clearable?: boolean;
@@ -144,9 +133,7 @@ declare namespace CORE {
 		/**
 		 * Interface for RHFNumberInput component
 		 */
-		export interface IRHFNumberInput
-			extends Partial<import("@mantine/core").NumberInputProps>,
-				React.RefAttributes<HTMLInputElement> {
+		export interface IRHFNumberInput extends Partial<import("@mantine/core").NumberInputProps>, React.RefAttributes<HTMLInputElement> {
 			label?: string;
 			name: string;
 		}
@@ -154,14 +141,7 @@ declare namespace CORE {
 		/**
 		 * Interface for RHFPasswordInput component
 		 */
-		export interface IRHFPasswordInputGetVisibilityIcon {
-			reveal: boolean;
-			size: number;
-		}
-
-		export interface IRHFPasswordInput
-			extends Partial<import("@mantine/core").PasswordInputProps>,
-				React.RefAttributes<HTMLInputElement> {
+		export interface IRHFPasswordInput extends Partial<import("@mantine/core").PasswordInputProps>, React.RefAttributes<HTMLInputElement> {
 			label?: string;
 			name: string;
 			onChange?: (value: any) => void;
@@ -170,9 +150,7 @@ declare namespace CORE {
 		/**
 		 * Interface for RHFSelect component
 		 */
-		export interface IRHFSelect
-			extends Partial<import("@mantine/core").SelectProps>,
-				React.RefAttributes<HTMLInputElement> {
+		export interface IRHFSelect extends Partial<import("@mantine/core").SelectProps>, React.RefAttributes<HTMLInputElement> {
 			label?: string;
 			name: string;
 			clearable?: boolean;
@@ -182,9 +160,7 @@ declare namespace CORE {
 		/**
 		 * Interface for RHFSwitch component
 		 */
-		export interface IRHFSwitch
-			extends Partial<import("@mantine/core").SwitchProps>,
-				React.RefAttributes<HTMLInputElement> {
+		export interface IRHFSwitch extends Partial<import("@mantine/core").SwitchProps>, React.RefAttributes<HTMLInputElement> {
 			label?: string;
 			name: string;
 			onChange?: (value: any) => void;
@@ -193,9 +169,7 @@ declare namespace CORE {
 		/**
 		 * Interface for RHFTextarea component
 		 */
-		export interface IRHFTextarea
-			extends Partial<import("@mantine/core").TextareaProps>,
-				React.RefAttributes<HTMLTextAreaElement> {
+		export interface IRHFTextarea extends Partial<import("@mantine/core").TextareaProps>, React.RefAttributes<HTMLTextAreaElement> {
 			label?: string;
 			name: string;
 		}
@@ -203,9 +177,7 @@ declare namespace CORE {
 		/**
 		 * Interface for RHFTextInput component
 		 */
-		export interface IRHFTextInput
-			extends Partial<import("@mantine/core").TextInputProps>,
-				React.RefAttributes<HTMLInputElement> {
+		export interface IRHFTextInput extends Partial<import("@mantine/core").TextInputProps>, React.RefAttributes<HTMLInputElement> {
 			label?: string;
 			name: string;
 		}
@@ -284,8 +256,7 @@ declare namespace CORE {
 		/**
 		 * Interface for CustomMantineProvider component
 		 */
-		export interface ICustomMantineProvider
-			extends Partial<import("@mantine/core").MantineProviderProps> {
+		export interface ICustomMantineProvider extends Partial<import("@mantine/core").MantineProviderProps> {
 			children: ReactElement | Array<ReactElement>;
 		}
 

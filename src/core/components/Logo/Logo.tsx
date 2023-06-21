@@ -10,8 +10,8 @@ const Logo = () => {
 		<Box>
 			<Group position="apart">
 				<Image
-					width={60}
-					height={55}
+					width={50}
+					height={45}
 					src={logo}
 					alt="logo"
 					classNames={{
@@ -20,9 +20,7 @@ const Logo = () => {
 				/>
 
 				<div className={classes.brandContainer}>
-					<Text className={classes.brandContainerText}>
-						{import.meta.env.VITE_APP_NAME}
-					</Text>
+					<Text className={classes.brandContainerText}>{import.meta.env.VITE_APP_NAME}</Text>
 				</div>
 			</Group>
 		</Box>

@@ -18,8 +18,8 @@ const styles = createStyles((theme) => ({
 		display: "flex",
 		alignItems: "center",
 		height: "100%",
-		width: `calc(100% - ${theme.spacing.md}px)`,
-		maxWidth: headerBaseWidth - theme.spacing.md,
+		width: `calc(100% - ${+theme.spacing.md}px)`,
+		maxWidth: headerBaseWidth - +theme.spacing.md,
 
 		[theme.fn.smallerThan("md")]: {
 			maxWidth: headerSmWidth - 15.99,
